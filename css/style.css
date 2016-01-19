@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Oregano);
+article, section, aside, hgroup, nav, header, footer, figure, figcaption {
+  display: block; }
+
+html {
+  color: #787878;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: #ececec;
+  font-family: "Source Sans Pro", Helvetica, sans-serif; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+aside {
+  width: 242px; }
+
+h1, h2, h3, h4 {
+  margin: 0px; }
+
+.is-left {
+  float: left; }
+
+header {
+  background: #4d7496; }
+
+.header-logo {
+  border-right: 1px solid #3d5c78; }
+
+.header-logo h1 {
+  font-family: "Oregano";
+  color: #FFFFFF;
+  font-size: 18px; }
