@@ -31,15 +31,253 @@ h1, h2, h3, h4 {
 }
 header {
   background:#4d7496;
+  height:50px;
+
+  a:hover, a:active{color:#a0c7e9}
 }
 .header-logo {
-  border-right: 1px solid #3d5c78;
+  border-right: $top-panel-border;
+  padding:9px 0px;
 }
 .header-logo {
   h1 {
     font-family: $font-spec;
     color: $top-color;
     font-size:18px;
+    line-height: 30px;
+    margin-left:$from-left
+  }
+  a{
+    float:right;
+    margin-right:$st-margin;
+    font-size:22px;
+    color:$top-color;
   }
 }
+.header-logo > * {
+  display: inline-block;
+}
+.top-nav
+{
+  float:right;
+  ul {
+    margin:0px;
+    list-style: none;
+    padding:0px;
+  }
+  li {
+    display: inline-block;
+    vertical-align: top;
+  }
+  a {
+    display: block;
+    padding: 12px 15px 8px;
+    text-decoration: none;
+    font-size:20px;
+    line-height:30px;
+    color:$top-color;
+    position:relative;
+    border-left:$top-panel-border
+  }
+  .user-action a {
+    font-size:14px;
+    font-weight:600;
+    line-height:30px;
+  }
+  .user-action a i {
+    vertical-align:middle;
+    margin-left:5px;
+    margin-top: -5px;
+  }
+  span.badge {
+    position:absolute;
+    top:5px;
+    right:50%;
+    margin-right:-17px;
+    font-size:12px;
+  }
+}
+.badge {
+  padding:2px 5px;
+}
+.badge-red {
+  background-color: $red-color;
+}
+.left-panel {
+  margin-right: $panel-margin;
+  float:left;
+}
+.box-panel {
+  background-color: $panel-bg;
+  margin-top: $panel-margin;
 
+  border: $panel-border;
+
+  nav {
+    ul {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+    }
+    a {
+      display: block;
+      padding:$st-margin;
+      padding-left:45px;
+      text-transform: uppercase;
+      border-bottom:1px solid #ebebeb;
+      color:$primary-color;
+      position: relative;
+      border-right:2px solid transparent;
+    }
+    a i.arrows {
+      position: absolute;
+      top:20px;
+      right:10px;
+      font-size:12px;
+    }
+    a i.menu-sign
+    {
+      position: absolute;
+      top:17px;
+      left:15px;
+      font-size:18px;
+    }
+    a.active {
+      background:#FFFFFF;
+      border-right:2px solid $darkbg-color;
+    }
+    a:hover {
+      text-decoration: none;
+      background: #ececec;
+      color:#656565;
+    }
+  }
+}
+.user-profile {
+  margin:$st-margin;
+}
+.user_profile-picture {
+  @include border-radius(50%);
+  border: 6px solid #E7E7E7;
+  height: 75px;
+  width: 75px;
+  display: inline-block;
+  overflow: hidden;
+  background: no-repeat center;
+  background-size: cover;
+  vertical-align: middle;
+  margin: 0;
+}
+.welcome {
+  display: inline-block;
+  font-size:16px;
+  vertical-align:middle;
+  padding-left:5px;
+
+  span.user {
+    font-weight: 600;
+  }
+  .status {
+    line-height:16px;
+    padding-left: 5px;
+    font-size: 12px;
+  }
+  .status span:before {
+    content: " ";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right:5px;
+    @include border-radius(5px);
+  }
+  .status.Away span:before {
+    background-color: #f0b502;
+  }
+  .status.Online span:before {
+    background-color: #0f724a;
+  }
+  .status.Offline span:before {
+    background-color: #c51010;
+  }
+}
+.search-panel {
+  margin: $st-margin;
+  position: relative;
+
+  input {
+    width: 100%;
+    background: transparent;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+  }
+    input::-webkit-input-placeholder {font-style:italic;}
+    input::-moz-placeholder          {font-style:italic;}
+    input:-moz-placeholder           {font-style:italic;}
+    input:-ms-input-placeholder      {font-style:italic;}
+  .icon-search {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: #bfbfbf;
+    font-size:18px;
+
+  }
+}
+.block {
+  padding:$st-margin;
+  border-bottom: $panel-border;
+  h2 {
+   font-size:14px;
+ }
+}
+.system-chart-block {
+  position:relative;
+
+  .system-chart {
+    width:80%;
+    margin:auto;
+    height: 130px;
+  }
+  .system-load-res {
+    position: absolute;
+    top: 53px;
+    left:50%;
+    color: $darkbg-color;
+    font-size:24px;
+    font-weight:bold;
+    margin-left:-20px;
+  }
+  .system-chart-legend {
+    font-size:12px;
+    text-align:center;
+  }
+}
+.block-notitle {
+  padding:10px 40px;
+}
+.progress-bar-legend {
+  font-size:12px;
+  margin-bottom:4px;
+}
+.progress {
+  @include border-radius(0px);
+  height:13px;
+  margin-bottom:5px;
+}
+.progress-bar.result-storage {
+  background-color: #d40d12;
+}
+.progress-bar.result-bandwidth {
+  background-color: #49bf67;
+}
+
+
+
+
+footer {
+  padding:50px 15px;
+  font-size:12px;
+  clear: both;
+  text-align: right;
+}
