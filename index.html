@@ -37,13 +37,13 @@
     </div>
     <nav>
         <ul>
-            <li><a href="#" class="dashboard active closed"><i class="menu-sign fa fa-tachometer"></i>Dashboard<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
-            <li><a href="#" class="ui-elements closed"><i class="menu-sign fa fa-desktop"></i>UI Elements<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
-            <li><a href="#" class="tables closed"><i class="menu-sign fa fa-table"></i>Tables<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
-            <li><a href="#" class="charts closed"><i class="menu-sign fa fa-bar-chart"></i>Charts & Statistics<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
-            <li><a href="#" class="mail closed"><i class="menu-sign fa fa-envelope-o"></i>Mail <span class="badge badge-red mails-new">24 New</span><i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
-            <li><a href="#" class="pages closed"><i class="menu-sign fa fa-pencil-square-o"></i>Pages<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
-            <li><a href="#" class="dropdown closed"><i class="menu-sign fa fa-folder-open-o"></i>Four Level Drop Down<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
+            <li><a href="javascript:;" class="dashboard active closed"><i class="menu-sign fa fa-tachometer"></i>Dashboard<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
+            <li><a href="javascript:;" class="ui-elements closed"><i class="menu-sign fa fa-desktop"></i>UI Elements<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
+            <li><a href="javascript:;" class="tables closed"><i class="menu-sign fa fa-table"></i>Tables<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
+            <li><a href="javascript:;" class="charts closed"><i class="menu-sign fa fa-bar-chart"></i>Charts & Statistics<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
+            <li><a href="javascript:;" class="mail closed"><i class="menu-sign fa fa-envelope-o"></i>Mail <span class="badge badge-red mails-new">24 New</span><i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
+            <li><a href="javascript:;" class="pages closed"><i class="menu-sign fa fa-pencil-square-o"></i>Pages<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
+            <li><a href="javascript:;" class="dropdown closed"><i class="menu-sign fa fa-folder-open-o"></i>Four Level Drop Down<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
         </ul>
     </nav>
     </div>
@@ -73,8 +73,120 @@
     </div>
 </aside>
 <section>
+    <div class="box-panel">
+        <h2 class="dashboard-title"><i class="menu-sign fa fa-tachometer"></i> Dashboard</h2>
+        <div class="panel-white table-view">
+            <div class="dash-box new-book">
+                <h3>New Bookings</h3>
+                <span></span>
+                <a href="#">View Details</a>
+            </div>
+            <div class="dash-box profit">
+                <h3>Profit</h3>
+                <span></span>
+                <a href="#">View Details</a>
+            </div>
+            <div class="dash-box visitors">
+                <h3>Visitors</h3>
+                <span></span>
+                <a href="#">View Details</a>
+            </div>
+            <div class="dash-box page-views">
+                <h3>Page Views</h3>
+                <span></span>
+                <a href="#">View Details</a>
+            </div>
+        </div>
 
+        <div class="panel-collapse table-view">
+            <div class="show-table show-table3">
+                <div class="panel-block">
+                    <div class="panel-header">File upload
+                        <a href="javascript:;" class="collapse-icon is-right"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                        <a href="javascript:;" class="remove is-right"><i class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                    <div class="panel-content fileUpload">
+                    </div>
+                </div>
+            </div>
+            <div class="show-table show-table3">
+                <div class="panel-block">
+                    <div class="panel-header">Browsers
+                        <a href="javascript:;" class="collapse-icon is-right"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                        <a href="javascript:;" class="remove is-right"><i class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                    <div class="panel-content browsersInfo">
+                        <table>
+                            <tr>
+                                <th>icons</th>
+                                <th>Browsers</th>
+                                <th>Visits</th>
+                            </tr>
+                            <tr>
+                                <td><img src="img/chrome.png"></td>
+                                <td>Google Chrome</td>
+                                <td class="getChromeInfo"></td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/ff.png"></td>
+                                <td>FireFox</td>
+                                <td class="getFireFoxInfo"></td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/ie.png"></td>
+                                <td>Internet Explorer</td>
+                                <td class="getIEInfo"></td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/safari.png"></td>
+                                <td>Safari</td>
+                                <td class="getSafariInfo"></td>
+                            </tr>
 
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="show-table show-table3">
+                <div class="panel-block">
+                    <div class="panel-header">Tech support
+                        <a href="javascript:;" class="collapse-icon is-right"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                        <a href="javascript:;" class="remove is-right"><i class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                    <div class="panel-content TechSupport">
+                        <table>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="box-panel">
+        <div class="half-size">
+            <h2>Bookings and Visitors</h2>
+            <div class="chart-visitors">
+                <div class="chart-block" id="chart-block">
+
+                </div>
+            </div>
+        </div>
+        <div class="half-size">
+            <h2>Traffic</h2>
+            <div class="chart-visitors">
+                <div class="panel-white">
+                    <div class="chart-traffic" id="chart-traffic">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-panel">
+        <h2 class="todoList">To do list & Calendar</h2>
+        <div class="comment">Todo list can be reordered by drag & drop, you can mark them as important</div>
+    </div>
 </section>
 <footer>Copy right 2014 All Rights Reserved.</footer>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -82,6 +194,9 @@
 <script src="js/app.js"></script>
 <script type="text/javascript">
     loadProfile();
+    loadDashboard();
+    loadFileUpload();
+    loadSupport();
 </script>
 </body>
 </html>
