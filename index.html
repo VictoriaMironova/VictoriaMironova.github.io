@@ -3,24 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="js/fullcalendar/fullcalendar.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
 </head>
 <body>
 <header>
-    <aside class="header-logo is-left" >
-        <h1>Orbgen Technologies</h1>
-        <a href="#"><i class="fa fa-bars"></i></a>
-    </aside>
+
     <div class="top-nav">
         <ul>
             <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span class="badge badge-red messages-new">5</span></a></li>
             <li><a href="#"><i class="fa fa-bell"></i><span class="badge badge-red alerts-new">8</span></a></li>
             <li><a href="#"><i class="fa fa-cog"></i></a></li>
-            <li class="user-action"><a href="#"><span>Joey Bing</span> <i class="fa fa-sort-desc"></i></a></li>
+            <li class="user-action"><a href="#"><span>Joey Bing</span> <i class="fa fa-sort-desc"></i></a>
+            <div class="topnavUser" style="display: none">
+                <ul>
+                    <li><a href="#">View Profile</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+            </li>
         </ul>
     </div>
+    <aside class="header-logo" >
+        <h1>Orbgen Technologies</h1>
+        <a href="#"><i class="fa fa-bars"></i></a>
+    </aside>
 </header>
 <aside class="left-panel">
     <div class="box-panel">
@@ -35,11 +45,32 @@
         <input type="text" placeholder="Search">
         <i class="icon-search fa fa-search"></i>
     </div>
-    <nav>
+    <nav class="main-nav">
         <ul>
-            <li><a href="javascript:;" class="dashboard active closed"><i class="menu-sign fa fa-tachometer"></i>Dashboard<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
-            <li><a href="javascript:;" class="ui-elements closed"><i class="menu-sign fa fa-desktop"></i>UI Elements<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
-            <li><a href="javascript:;" class="tables closed"><i class="menu-sign fa fa-table"></i>Tables<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
+            <li><a href="javascript:;" class="dashboard active closed"><i class="menu-sign fa fa-tachometer"></i>Dashboard<i class="arrows glyphicon glyphicon-chevron-down"></i></a>
+                <div style="display: none">
+                    <ul class="subitems">
+                        <li><a href="#">Menu SubItem 1</a></li>
+                        <li><a href="#">Menu SubItem 2</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="javascript:;" class="ui-elements closed"><i class="menu-sign fa fa-desktop"></i>UI Elements<i class="arrows glyphicon glyphicon-chevron-down"></i></a>
+                <div style="display: none">
+                    <ul class="subitems">
+                        <li><a href="#">Menu SubItem 1</a></li>
+                        <li><a href="#">Menu SubItem 2</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="javascript:;" class="tables closed"><i class="menu-sign fa fa-table"></i>Tables<i class="arrows glyphicon glyphicon-chevron-down"></i></a>
+                <div style="display: none">
+                    <ul class="subitems">
+                        <li><a href="#">Menu SubItem 1</a></li>
+                        <li><a href="#">Menu SubItem 2</a></li>
+                    </ul>
+                </div>
+            </li>
             <li><a href="javascript:;" class="charts closed"><i class="menu-sign fa fa-bar-chart"></i>Charts & Statistics<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
             <li><a href="javascript:;" class="mail closed"><i class="menu-sign fa fa-envelope-o"></i>Mail <span class="badge badge-red mails-new">24 New</span><i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
             <li><a href="javascript:;" class="pages closed"><i class="menu-sign fa fa-pencil-square-o"></i>Pages<i class="arrows glyphicon glyphicon-chevron-down"></i></a></li>
@@ -186,17 +217,54 @@
     <div class="box-panel">
         <h2 class="todoList">To do list & Calendar</h2>
         <div class="comment">Todo list can be reordered by drag & drop, you can mark them as important</div>
+        <div class="half-size">
+            <div class="todolist">
+                <div class="addnewItem">
+                    <input type="text" placeholder="Add New task here ...."/><button type="button"><i class="fa fa-plus"></i></button>
+                </div>
+                <div class="todoitems">
+                    <div class="today">
+                        <p>Today</p>
+                        <div>
+
+                        </div>
+                    </div>
+                    <div class="tomday">
+                        <p></p>
+                        <div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="half-size">
+            <div class="calendar" id="calendar"></div>
+            <div class="DayImportant"></div>
+        </div>
     </div>
 </section>
 <footer>Copy right 2014 All Rights Reserved.</footer>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="js/fullcalendar/moment.min.js"></script>
+<script src="js/fullcalendar/fullcalendar.min.js"></script>
 <script src="js/app.js"></script>
 <script type="text/javascript">
-    loadProfile();
-    loadDashboard();
-    loadFileUpload();
-    loadSupport();
+
+    $(document).ready(function() {
+        loadProfile();
+        loadDashboard();
+        loadFileUpload();
+        loadSupport();
+        loadCalendar();
+        loadBrowsers();
+        drawChart();
+        drawLines();
+        drawTraffic();
+
+    });
 </script>
 </body>
 </html>

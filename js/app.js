@@ -1,6 +1,24 @@
 /**
  * Created by Viktoriia_Mironova on 1/19/2016.
  */
+/*------------------menu----------------------------*/
+$('.main-nav a').click(function(){
+    $(this).toggleClass('closed');
+    $(this).find('.arrows').toggleClass('glyphicon-chevron-down');
+    $(this).find('.arrows').toggleClass('glyphicon-chevron-up');
+    $(this).parent().find('div').toggle();
+})
+$('.header-logo a').click(function(){
+    $('.left-panel').toggle();
+    drawChart();
+    $('body > section').toggleClass('nopanel');
+});
+$('.user-action a').click(function(){
+    $(this).find('.fa').toggleClass('fa-sort-desc');
+    $(this).find('.fa').toggleClass('fa-sort-up');
+
+    $(this).parent().find('div').toggle();
+})
 /*------------------profile-------------------------*/
 var geninfo ='{"_id":"569e0c66c19174aa097ac038","index":0,"gender":"male","Firstname":"Fuentes","Lastname":"Woods","picture":"img/user_pic.png","status":"Online","email":"fuenteswoods@qimonk.com","phone":"+1 (998) 553-2893","servLoad":73,"storageLoad":38,"bandwidth":21,"messagesNew":6,"alertsNew":1,"mailsNew":27}';
 var genData = JSON.parse(geninfo);
@@ -57,6 +75,16 @@ function loadFileUpload(){
         $('.fileUpload').append(fileline);
     }
 }
+/*------------------browsers------------------------*/
+var browsersinfo = '{"Chrome":"1.213","FF":"2,356","IE":"1.235","Safari":"1.455"}';
+var browsersData=JSON.parse(browsersinfo);
+function loadBrowsers()
+{
+    $('.getChromeInfo').html(browsersData.Chrome);
+    $('.getFireFoxInfo').html(browsersData.FF);
+    $('.getIEInfo').html(browsersData.IE);
+    $('.getSafariInfo').html(browsersData.Safari);
+}
 /*------------------support-------------------------*/
 var supportinfo = '[{"Firstname":"John","Lastname":"Smith","picture":"img/user_pic.png","Status":"Offline","Message":"Dashboard error . Look at the issuse"},' +
     '{"Firstname":"Ivan","Lastname":"Pertov","picture":"img/user_pic.png","Status":"Online","Message":"Mobile application error , look after the problems and do rectify it"},' +
@@ -69,7 +97,129 @@ function loadSupport(){
         $('.TechSupport table').append(supportLine);
     }
 }
-/*------------------charts--------------------------*/
+/*------------------calendar------------------------*/
+var dataEvents = [
+    {
+        title: 'All Day Event',
+        start: '2016-01-22'
+    },
+    {
+        title: 'Long Event',
+        start: '2016-01-23',
+        end: '2016-01-25'
+    },
+    {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2016-01-09T16:00:00'
+    },
+    {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2016-01-16T16:00:00'
+    },
+    {
+        title: 'Conference',
+        start: '2016-01-11',
+        end: '2016-01-13'
+    },
+    {
+        title: 'Meeting',
+        start: '2016-01-12T10:30:00',
+        end: '2016-01-08T12:30:00'
+    },
+    {
+        title: 'Lunch',
+        start: '2016-01-09T12:00:00'
+    },
+    {
+        title: 'Meeting',
+        start: '2016-01-22T14:30:00'
+    },
+    {
+        title: 'Happy Hour',
+        start: '2016-01-22T17:30:00'
+    },
+    {
+        title: 'Dinner',
+        start: '2016-01-21T15:00:00'
+    },
+    {
+        title: 'Birthday Party',
+        start: '2016-01-21T17:00:00'
+    },
+    {
+        title: 'Click for Google',
+        url: 'http://google.com/',
+        start: '2016-01-28'
+    }
+];
+var eventDay, tomDay;
+function loadCalendar(){
+    $('#calendar').fullCalendar({
+        header: {
+           right: 'prev,next',
+            center: 'left',
+
+        },
+        contentHeight: 500,
+        editable: true,
+        events: dataEvents,
+    })
+    var Today = new Date();
+    eventDay=$('#calendar').fullCalendar( 'clientEvents', function(evt) {
+        var checkdate=new Date(evt.start);
+        if(Today.getYear()==checkdate.getYear() && Today.getMonth()==checkdate.getMonth() && Today.getDate()==checkdate.getDate())
+        {
+           return evt;
+        }
+
+    });
+    tomDay=$('#calendar').fullCalendar( 'clientEvents', function(evt) {
+        var checkdate=new Date(evt.start);
+        if(Today.getYear()==checkdate.getYear() && Today.getMonth()==checkdate.getMonth() && Today.getDate()+1==checkdate.getDate())
+        {
+            return evt;
+        }
+        $('.tomday > p').html(checkdate.getDate()+'/'+('0'+checkdate.getMonth()+1).slice(-2)+'/'+(1900+checkdate.getYear()));
+
+    });
+    for (var i=0;i<eventDay.length;i++)
+    {
+        var time=new Date(eventDay[i].start).getUTCHours()+':'+('0'+(new Date(eventDay[i].start).getUTCMinutes())).slice(-2);
+
+        $('.DayImportant').append('<div><span>'+time+'</span>'+eventDay[i].title+'</div>');
+        $('.today > div').append('<div class="day-item"><i class="important fa fa-flag" onclick="MarkImportant(this)" ></i></a><span class="todoProgress" onclick="MarkDone(this)"><i class="fa fa-square-o"></i></span>'+eventDay[i].title+'<span> at '+time+'</span></div>');
+
+    }
+    for (var i=0;i<tomDay.length;i++)
+    {
+        var time=new Date(tomDay[i].start).getUTCHours()+':'+('0'+(new Date(tomDay[i].start).getUTCMinutes())).slice(-2);
+
+        $('.tomday > div').append('<div class="day-item"><i class="important fa fa-flag" onclick="MarkImportant(this)" ></i></a><span class="todoProgress" onclick="MarkDone(this)"><i class="fa fa-square-o"></i></span>'+tomDay[i].title+'<span> at '+time+'</span></div>');
+
+    }
+
+}
+function MarkImportant(ID)
+{
+    $(ID).toggleClass('is-important');
+    $(ID).parent().toggleClass('impotant-item')
+    // to save where?
+
+}
+function MarkDone(ID)
+{
+    $(ID).find('i').toggleClass('fa-square-o');
+    $(ID).find('i').toggleClass('fa-check-square');
+    // to save where?
+
+}
+
+
+
+/*------------------charts--------
+------------------*/
 google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawChart);
 google.charts.setOnLoadCallback(drawLines);
@@ -83,6 +233,7 @@ function drawChart() {
     var options = {
         pieHole: 0.8,
         pieSliceText: 'none',
+        width:'80%',
         legend: 'none',
         backgroundColor: '#f9f9f9',
         chartArea:{top:13,width:'85%', height:'85%'},
@@ -161,4 +312,18 @@ function drawTraffic() {
 
     var chart = new google.visualization.PieChart(document.getElementById('chart-traffic'));
     chart.draw(data, options);
+}
+function resizeChart () {
+    drawChart();
+    drawLines();
+    drawTraffic();
+}
+if (document.addEventListener) {
+    window.addEventListener('resize', resizeChart);
+}
+else if (document.attachEvent) {
+    window.attachEvent('onresize', resizeChart);
+}
+else {
+    window.resize = resizeChart;
 }

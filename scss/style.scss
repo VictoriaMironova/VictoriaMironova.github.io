@@ -22,6 +22,11 @@ a:hover {
 aside
 {
   width:$left-panel-width;
+  float:left;
+  @media screen and (max-width: $break-small) {
+    float:none;
+    width:auto;
+  }
 }
 h1, h2, h3, h4 {
   margin:0px;
@@ -35,6 +40,9 @@ h1, h2, h3, h4 {
 header {
   background:#4d7496;
   height:50px;
+  @media screen and (max-width: $break-small) {
+    height:auto;
+  }
 
   a:hover, a:active{color:#a0c7e9}
 }
@@ -48,7 +56,10 @@ header {
     color: $top-color;
     font-size:18px;
     line-height: 30px;
-    margin-left:$from-left
+    margin-left:$from-left;
+    @media screen and (max-width: $break-small) {
+    margin-left:15px;
+  }
   }
   a{
     float:right;
@@ -63,6 +74,12 @@ header {
 .top-nav
 {
   float:right;
+  @media screen and (max-width: $break-small) {
+    float:none;
+    width:auto;
+    text-align: right;
+    background: #4d5e6d;
+  }
   ul {
     margin:0px;
     list-style: none;
@@ -80,17 +97,42 @@ header {
     line-height:30px;
     color:$top-color;
     position:relative;
-    border-left:$top-panel-border
+    border-left:$top-panel-border;
+
+    @media screen and (max-width: $break-small) {
+    padding: 5px 15px;
+      border-left:$top-panel-border-sm;
+  }
   }
   .user-action a {
     font-size:14px;
     font-weight:600;
     line-height:30px;
   }
+  .topnavUser{
+    position:absolute;
+    background: #4d5e6d;
+    width:110px;
+    right:15px;
+    @media screen and (max-width: $break-small) {
+      right:5px;
+    }
+    li{display: block;}
+    a{
+      border-bottom:1px solid $darkbg-color;
+      text-align: left;
+
+      padding:5px;
+    }
+
+  }
   .user-action a i {
     vertical-align:middle;
     margin-left:5px;
     margin-top: -5px;
+  }
+  .user-action a i.fa-sort-up{
+    margin-top: 5px;
   }
   span.badge {
     position:absolute;
@@ -109,6 +151,11 @@ header {
 .left-panel {
   margin-right: $panel-margin;
   float:left;
+  @media screen and (max-width: $break-small) {
+    float:none;
+    margin:10px;
+    display: none;
+  }
 }
 .box-panel {
   background-color: $panel-bg;
@@ -131,6 +178,14 @@ header {
       color:$primary-color;
       position: relative;
       border-right:2px solid transparent;
+    }
+    ul.subitems {
+      a{
+        padding:10px 10px 10px 55px;
+        background:#f2f2f2;
+        border-bottom:1px solid #cccccc;
+      }
+
     }
     a i.arrows {
       position: absolute;
@@ -248,7 +303,7 @@ header {
 }
 .system-chart-block {
   position:relative;
-
+width:auto;
   .system-chart {
     width:80%;
     margin:auto;
@@ -298,11 +353,21 @@ footer {
 }
 section{
   margin-left:$left-panel-width+10px;
-
+  @media screen and (max-width: $break-small) {
+    float:none;
+    margin:10px;
+  }
   h2{
     font-size:14px;
     color:$primary-color;
     padding:20px 30px;
+    @media screen and (max-width: $break-small) {
+      padding:10px 10px;
+    }
+    @media screen and (max-width: $break-large) {
+      padding:10px 10px;
+    }
+
   }
   h2.dashboard-title i{
     font-size:24px;
@@ -319,21 +384,36 @@ section{
     color:#a7a7a7;
   }
 }
+section.nopanel{margin-left:10px;}
 .panel-white {
   padding:17px 0px 18px 0px;
   background: #FFFFFF;
   border:1px solid #dbdbdb;
 
   .dash-box {
-    min-width:125px;
     width:25%;
     @include border-radius(3px);
     display: table-cell;
-
+    @media screen and (max-width: 650px) {
+      display: inline-block;
+      width: 45%;
+      margin: 2%;
+    }
+    @media screen and (max-width: $break-small) {
+      display: block;
+      width: auto;
+      margin: 10px;
+    }
     h3 {
       padding:$st-margin $st-margin 0px;
       font-size:14px;
       text-transform: uppercase;
+      @media screen and (max-width: $break-small) {
+        padding:5px 5px 0px
+      }
+      @media screen and (max-width: $break-large) {
+        padding:5px 5px 0px
+      }
     }
     span {
       padding:0px 13px 5px;
@@ -343,6 +423,12 @@ section{
       position:relative;
       z-index:10;
       color:#f9f9f9;
+      @media screen and (max-width: $break-small) {
+        padding:0px 5px 5px
+      }
+      @media screen and (max-width: $break-large) {
+        padding:0px 5px 5px
+      }
     }
     span:before {
       content:"";
@@ -356,6 +442,12 @@ section{
     }
     a{
       padding:4px $st-margin;
+      @media screen and (max-width: $break-small) {
+        padding:5px 5px;
+      }
+      @media screen and (max-width: $break-large) {
+        padding:5px 5px;
+      }
     }
   }
   .dash-box > * {
@@ -391,7 +483,7 @@ section{
     background: #49bf67;
   }
   .progress {
-    width:235px;
+    max-width:235px;
     @include border-radius(5px);
   }
   > div{
@@ -440,7 +532,7 @@ section{
     padding:5px;
     border-bottom:1px solid #dbdbdb;
     font-size:12px;
-    line-height:18px;
+    line-height:12px;
     min-height:40px;
      position:relative;
 
@@ -449,7 +541,7 @@ section{
       height:30px;
       @include border-radius(50%);
       display: inline-block;
-      vertical-align: middle;
+      vertical-align: top;
       float:left;
     }
     span  {
@@ -478,9 +570,23 @@ section{
 
   .show-table {
     display: table-cell;
+    @media screen and (max-width: $break-small) {
+      display: block;
+      margin-bottom:10px;
+    }
+    @media screen and (max-width: $break-large) {
+      display: block;
+      margin-bottom:10px;
+    }
   }
   .show-table3 {
     width: 33.3%;
+    @media screen and (max-width: $break-small) {
+      width: auto;
+    }
+    @media screen and (max-width: $break-large) {
+      width: auto;
+    }
   }
 }
   .panel-block {
@@ -508,24 +614,212 @@ section{
 
 .table-view {
   display: table;
-  border-spacing:30px 0px;
+  border-spacing:$border-spacing-normal 0px;
   width:100%;
+  @media screen and (max-width: $break-small) {
+    border-spacing:$border-spacing-sm 0px;
+  }
+  @media screen and (max-width: $break-large) {
+    border-spacing:$border-spacing-sm 0px;
+  }
 }
 
 .half-size
 {
   display: inline-block;
   width:49%;
+  vertical-align: top;
+  @media screen and (max-width: $break-small) {
+    display: block;
+    width:auto;
+  }
+  @media screen and (max-width: $break-large) {
+    display: block;
+    width:auto;
+  }
 }
 .chart-visitors{
-  margin:0px 30px 40px;
+  margin:0px $border-spacing-normal 40px;
   .panel-white{padding:0px;}
+
+  @media screen and (max-width: $break-small) {
+    margin:0px $border-spacing-sm 10px;
+  }
+  @media screen and (max-width: $break-large) {
+    margin:0px $border-spacing-sm 10px;
+  }
 }
 .chart-block{
   width:100%;
   height:320px;
+  @media screen and (max-width: $break-small) {
+    height:220px;
+  }
+  @media screen and (max-width: $break-large) {
+    height:220px;
+  }
 }
 .chart-traffic {
   width:100%;
   height:320px;
+  @media screen and (max-width: $break-small) {
+    height:220px;
+  }
+  @media screen and (max-width: $break-large) {
+    height:220px;
+  }
+}
+.calendar {
+  margin:20px $border-spacing-normal 0px;
+  @media screen and (max-width: $break-small) {
+    margin:10px $border-spacing-sm 0px;
+  }
+  @media screen and (max-width: $break-large) {
+    margin:10px $border-spacing-sm 0px;
+  }
+  .fc-view-container {
+    background:#FFFFFF;
+  }
+  .fc-widget-header table, .fc-widget-header table th, .fc-head table, .fc-head{
+    border:0px;
+  }
+  .fc-today{
+    background:#fc8974;
+  }
+  .fc-day-grid-event{margin-top:0px;margin-bottom:1px;}
+  .fc-event {background: #ced2de;border-color:#ced2de;color:$primary-color}
+  .fc-body, .fc-body > td.fc-widget-content {border-top:0px;}
+  .fc-head, td.fc-widget-header {border-bottom:0px;}
+  .fc-toolbar {
+    margin:0px;
+    background:#f9f9f9;
+    border:1px solid #ddd;
+    border-bottom:0px;
+    h2{
+      padding:15px;
+      font-weight:bold;
+    }
+    .fc-button-group {
+      margin-top:3px;
+    }
+    .fc-button {background:transparent;border:0px;box-shadow: none;color:#cbcdd9;font-weight:bold;font-size:18px;padding:0px 5px;}
+    .fc-button:hover{color:#818288}
+  }
+  .fc-bg table{
+    border-collapse: separate;
+    border-spacing: 2px;
+  }
+  .fc-day-header {color:#00acec;padding:5px 0px 5px 5px; }
+  .fc-content-skeleton table{
+    border-collapse: separate;
+    border-spacing: 2px 0px;
+  }
+  .fc-basic-view td.fc-day-number, .fc-basic-view td.fc-week-number span
+  {
+    padding:2px;
+  }
+}
+.DayImportant{
+  margin:0px 30px 40px;
+  @media screen and (max-width: $break-small) {
+    margin:0px $border-spacing-sm 10px;
+  }
+  @media screen and (max-width: $break-large) {
+    margin:0px $border-spacing-sm 10px;
+  }
+  background:#ca5d56;
+  padding:10px;
+  div{
+    clear:both;
+    color:#FFFFFF;
+
+  span{
+    float:right;
+  }
+  }
+}
+.todolist {
+
+    margin:20px 30px 0px;
+  @media screen and (max-width: $break-small) {
+    margin:10px $border-spacing-sm 40px;
+  }
+  @media screen and (max-width: $break-large) {
+    margin:10px $border-spacing-sm 40px;
+  }
+    .todoitems {
+      border:1px solid #d4d4d4;
+      border-top:0px;
+      background: #FFFFFF;
+
+
+      p{
+        padding:8px 20px;
+        margin:0px;
+        color:#e66454;
+      }
+      .today{
+
+      }
+      .important-item{
+        background:#ffd5d5;
+      }
+
+      .day-item
+      {
+        padding:11px 20px;
+        border-bottom:1px solid #d4d4d4;
+        border-left:2px solid transparent;
+        .important{
+          float:right;
+          font-size:18px;
+          color:#dedede;
+          cursor: pointer;
+          margin-top:6px;
+        }
+        .is-important
+        {
+          color:red;
+        }
+      }
+      .day-item:hover{
+        background:#f9f9f9;
+        border-left:2px solid $darkbg-color;
+      }
+      .important-item:hover
+      {
+        background:#ffe5e5;
+      }
+      .todoProgress {
+        display:inline-block;
+        font-size:20px;
+        color:#dedede;
+        width:20px;
+        vertical-align: middle;
+      }
+    }
+
+    .addnewItem {
+      position:relative;
+      input {
+        width:100%;
+        height:45px;
+        padding:0px 55px 0px 1%;
+        border:1px solid #d4d4d4;
+      }
+      button{
+        background:#49bf67;
+        border:0px;
+        text-align:center;
+        color:#FFFFFF;
+        position:absolute;
+        top:0px;
+        right:0px;
+        height:45px;
+        width:50px;
+      }
+
+    }
+
+
 }

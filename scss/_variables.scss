@@ -11,10 +11,16 @@ $left-panel-width: 242px;
 $from-left:48px;
 $st-margin:15px;
 $top-panel-border:1px solid #3d5c78;
+$top-panel-border-sm:1px solid #FFFFFF;
 $panel-bg:#f9f9f9;
 $panel-margin:10px;
 $panel-border: 1px solid #d1d1d1;
 $collapse-panel-border:1px solid #dbdbdb;
+$border-spacing-normal:30px;
+$border-spacing-sm:10px;
+$break-small: 540px;
+$break-large: 930px;
+
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;

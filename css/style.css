@@ -19,7 +19,12 @@ a:hover {
   outline: 0; }
 
 aside {
-  width: 242px; }
+  width: 242px;
+  float: left; }
+  @media screen and (max-width: 540px) {
+    aside {
+      float: none;
+      width: auto; } }
 
 h1, h2, h3, h4 {
   margin: 0px; }
@@ -33,6 +38,9 @@ h1, h2, h3, h4 {
 header {
   background: #4d7496;
   height: 50px; }
+  @media screen and (max-width: 540px) {
+    header {
+      height: auto; } }
   header a:hover, header a:active {
     color: #a0c7e9; }
 
@@ -46,6 +54,9 @@ header {
   font-size: 18px;
   line-height: 30px;
   margin-left: 48px; }
+  @media screen and (max-width: 540px) {
+    .header-logo h1 {
+      margin-left: 15px; } }
 
 .header-logo a {
   float: right;
@@ -58,6 +69,12 @@ header {
 
 .top-nav {
   float: right; }
+  @media screen and (max-width: 540px) {
+    .top-nav {
+      float: none;
+      width: auto;
+      text-align: right;
+      background: #4d5e6d; } }
   .top-nav ul {
     margin: 0px;
     list-style: none;
@@ -74,14 +91,34 @@ header {
     color: #FFFFFF;
     position: relative;
     border-left: 1px solid #3d5c78; }
+    @media screen and (max-width: 540px) {
+      .top-nav a {
+        padding: 5px 15px;
+        border-left: 1px solid #FFFFFF; } }
   .top-nav .user-action a {
     font-size: 14px;
     font-weight: 600;
     line-height: 30px; }
+  .top-nav .topnavUser {
+    position: absolute;
+    background: #4d5e6d;
+    width: 110px;
+    right: 15px; }
+    @media screen and (max-width: 540px) {
+      .top-nav .topnavUser {
+        right: 5px; } }
+    .top-nav .topnavUser li {
+      display: block; }
+    .top-nav .topnavUser a {
+      border-bottom: 1px solid #4d7496;
+      text-align: left;
+      padding: 5px; }
   .top-nav .user-action a i {
     vertical-align: middle;
     margin-left: 5px;
     margin-top: -5px; }
+  .top-nav .user-action a i.fa-sort-up {
+    margin-top: 5px; }
   .top-nav span.badge {
     position: absolute;
     top: 5px;
@@ -98,6 +135,11 @@ header {
 .left-panel {
   margin-right: 10px;
   float: left; }
+  @media screen and (max-width: 540px) {
+    .left-panel {
+      float: none;
+      margin: 10px;
+      display: none; } }
 
 .box-panel {
   background-color: #f9f9f9;
@@ -116,6 +158,10 @@ header {
     color: #787878;
     position: relative;
     border-right: 2px solid transparent; }
+  .box-panel nav ul.subitems a {
+    padding: 10px 10px 10px 55px;
+    background: #f2f2f2;
+    border-bottom: 1px solid #cccccc; }
   .box-panel nav a i.arrows {
     position: absolute;
     top: 20px;
@@ -225,7 +271,8 @@ header {
     font-size: 14px; }
 
 .system-chart-block {
-  position: relative; }
+  position: relative;
+  width: auto; }
   .system-chart-block .system-chart {
     width: 80%;
     margin: auto;
@@ -271,10 +318,20 @@ footer {
 
 section {
   margin-left: 252px; }
+  @media screen and (max-width: 540px) {
+    section {
+      float: none;
+      margin: 10px; } }
   section h2 {
     font-size: 14px;
     color: #787878;
     padding: 20px 30px; }
+    @media screen and (max-width: 540px) {
+      section h2 {
+        padding: 10px 10px; } }
+    @media screen and (max-width: 930px) {
+      section h2 {
+        padding: 10px 10px; } }
   section h2.dashboard-title i {
     font-size: 24px;
     margin-right: 5px; }
@@ -287,22 +344,40 @@ section {
     font-size: 12px;
     color: #a7a7a7; }
 
+section.nopanel {
+  margin-left: 10px; }
+
 .panel-white {
   padding: 17px 0px 18px 0px;
   background: #FFFFFF;
   border: 1px solid #dbdbdb; }
   .panel-white .dash-box {
-    min-width: 125px;
     width: 25%;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     border-radius: 3px;
     display: table-cell; }
+    @media screen and (max-width: 650px) {
+      .panel-white .dash-box {
+        display: inline-block;
+        width: 45%;
+        margin: 2%; } }
+    @media screen and (max-width: 540px) {
+      .panel-white .dash-box {
+        display: block;
+        width: auto;
+        margin: 10px; } }
     .panel-white .dash-box h3 {
       padding: 15px 15px 0px;
       font-size: 14px;
       text-transform: uppercase; }
+      @media screen and (max-width: 540px) {
+        .panel-white .dash-box h3 {
+          padding: 5px 5px 0px; } }
+      @media screen and (max-width: 930px) {
+        .panel-white .dash-box h3 {
+          padding: 5px 5px 0px; } }
     .panel-white .dash-box span {
       padding: 0px 13px 5px;
       margin: 0px 2px;
@@ -311,6 +386,12 @@ section {
       position: relative;
       z-index: 10;
       color: #f9f9f9; }
+      @media screen and (max-width: 540px) {
+        .panel-white .dash-box span {
+          padding: 0px 5px 5px; } }
+      @media screen and (max-width: 930px) {
+        .panel-white .dash-box span {
+          padding: 0px 5px 5px; } }
     .panel-white .dash-box span:before {
       content: "";
       display: block;
@@ -322,6 +403,12 @@ section {
       width: 70px; }
     .panel-white .dash-box a {
       padding: 4px 15px; }
+      @media screen and (max-width: 540px) {
+        .panel-white .dash-box a {
+          padding: 5px 5px; } }
+      @media screen and (max-width: 930px) {
+        .panel-white .dash-box a {
+          padding: 5px 5px; } }
   .panel-white .dash-box > * {
     display: block; }
   .panel-white .dash-box.new-book {
@@ -345,7 +432,7 @@ section {
   background: #49bf67; }
 
 .fileUpload .progress {
-  width: 235px;
+  max-width: 235px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -385,7 +472,7 @@ section {
   padding: 5px;
   border-bottom: 1px solid #dbdbdb;
   font-size: 12px;
-  line-height: 18px;
+  line-height: 12px;
   min-height: 40px;
   position: relative; }
   .TechSupport td img {
@@ -396,7 +483,7 @@ section {
     -ms-border-radius: 50%;
     border-radius: 50%;
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
     float: left; }
   .TechSupport td span {
     display: inline-block;
@@ -423,8 +510,22 @@ section {
   position: relative; }
   .panel-collapse .show-table {
     display: table-cell; }
+    @media screen and (max-width: 540px) {
+      .panel-collapse .show-table {
+        display: block;
+        margin-bottom: 10px; } }
+    @media screen and (max-width: 930px) {
+      .panel-collapse .show-table {
+        display: block;
+        margin-bottom: 10px; } }
   .panel-collapse .show-table3 {
     width: 33.3%; }
+    @media screen and (max-width: 540px) {
+      .panel-collapse .show-table3 {
+        width: auto; } }
+    @media screen and (max-width: 930px) {
+      .panel-collapse .show-table3 {
+        width: auto; } }
 
 .panel-block {
   min-width: 125px;
@@ -452,20 +553,185 @@ section {
   display: table;
   border-spacing: 30px 0px;
   width: 100%; }
+  @media screen and (max-width: 540px) {
+    .table-view {
+      border-spacing: 10px 0px; } }
+  @media screen and (max-width: 930px) {
+    .table-view {
+      border-spacing: 10px 0px; } }
 
 .half-size {
   display: inline-block;
-  width: 49%; }
+  width: 49%;
+  vertical-align: top; }
+  @media screen and (max-width: 540px) {
+    .half-size {
+      display: block;
+      width: auto; } }
+  @media screen and (max-width: 930px) {
+    .half-size {
+      display: block;
+      width: auto; } }
 
 .chart-visitors {
   margin: 0px 30px 40px; }
   .chart-visitors .panel-white {
     padding: 0px; }
+  @media screen and (max-width: 540px) {
+    .chart-visitors {
+      margin: 0px 10px 10px; } }
+  @media screen and (max-width: 930px) {
+    .chart-visitors {
+      margin: 0px 10px 10px; } }
 
 .chart-block {
   width: 100%;
   height: 320px; }
+  @media screen and (max-width: 540px) {
+    .chart-block {
+      height: 220px; } }
+  @media screen and (max-width: 930px) {
+    .chart-block {
+      height: 220px; } }
 
 .chart-traffic {
   width: 100%;
   height: 320px; }
+  @media screen and (max-width: 540px) {
+    .chart-traffic {
+      height: 220px; } }
+  @media screen and (max-width: 930px) {
+    .chart-traffic {
+      height: 220px; } }
+
+.calendar {
+  margin: 20px 30px 0px; }
+  @media screen and (max-width: 540px) {
+    .calendar {
+      margin: 10px 10px 0px; } }
+  @media screen and (max-width: 930px) {
+    .calendar {
+      margin: 10px 10px 0px; } }
+  .calendar .fc-view-container {
+    background: #FFFFFF; }
+  .calendar .fc-widget-header table, .calendar .fc-widget-header table th, .calendar .fc-head table, .calendar .fc-head {
+    border: 0px; }
+  .calendar .fc-today {
+    background: #fc8974; }
+  .calendar .fc-day-grid-event {
+    margin-top: 0px;
+    margin-bottom: 1px; }
+  .calendar .fc-event {
+    background: #ced2de;
+    border-color: #ced2de;
+    color: #787878; }
+  .calendar .fc-body, .calendar .fc-body > td.fc-widget-content {
+    border-top: 0px; }
+  .calendar .fc-head, .calendar td.fc-widget-header {
+    border-bottom: 0px; }
+  .calendar .fc-toolbar {
+    margin: 0px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-bottom: 0px; }
+    .calendar .fc-toolbar h2 {
+      padding: 15px;
+      font-weight: bold; }
+    .calendar .fc-toolbar .fc-button-group {
+      margin-top: 3px; }
+    .calendar .fc-toolbar .fc-button {
+      background: transparent;
+      border: 0px;
+      box-shadow: none;
+      color: #cbcdd9;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 0px 5px; }
+    .calendar .fc-toolbar .fc-button:hover {
+      color: #818288; }
+  .calendar .fc-bg table {
+    border-collapse: separate;
+    border-spacing: 2px; }
+  .calendar .fc-day-header {
+    color: #00acec;
+    padding: 5px 0px 5px 5px; }
+  .calendar .fc-content-skeleton table {
+    border-collapse: separate;
+    border-spacing: 2px 0px; }
+  .calendar .fc-basic-view td.fc-day-number, .calendar .fc-basic-view td.fc-week-number span {
+    padding: 2px; }
+
+.DayImportant {
+  margin: 0px 30px 40px;
+  background: #ca5d56;
+  padding: 10px; }
+  @media screen and (max-width: 540px) {
+    .DayImportant {
+      margin: 0px 10px 10px; } }
+  @media screen and (max-width: 930px) {
+    .DayImportant {
+      margin: 0px 10px 10px; } }
+  .DayImportant div {
+    clear: both;
+    color: #FFFFFF; }
+    .DayImportant div span {
+      float: right; }
+
+.todolist {
+  margin: 20px 30px 0px; }
+  @media screen and (max-width: 540px) {
+    .todolist {
+      margin: 10px 10px 40px; } }
+  @media screen and (max-width: 930px) {
+    .todolist {
+      margin: 10px 10px 40px; } }
+  .todolist .todoitems {
+    border: 1px solid #d4d4d4;
+    border-top: 0px;
+    background: #FFFFFF; }
+    .todolist .todoitems p {
+      padding: 8px 20px;
+      margin: 0px;
+      color: #e66454; }
+    .todolist .todoitems .important-item {
+      background: #ffd5d5; }
+    .todolist .todoitems .day-item {
+      padding: 11px 20px;
+      border-bottom: 1px solid #d4d4d4;
+      border-left: 2px solid transparent; }
+      .todolist .todoitems .day-item .important {
+        float: right;
+        font-size: 18px;
+        color: #dedede;
+        cursor: pointer;
+        margin-top: 6px; }
+      .todolist .todoitems .day-item .is-important {
+        color: red; }
+    .todolist .todoitems .day-item:hover {
+      background: #f9f9f9;
+      border-left: 2px solid #4d7496; }
+    .todolist .todoitems .important-item:hover {
+      background: #ffe5e5; }
+    .todolist .todoitems .todoProgress {
+      display: inline-block;
+      font-size: 20px;
+      color: #dedede;
+      width: 20px;
+      vertical-align: middle; }
+  .todolist .addnewItem {
+    position: relative; }
+    .todolist .addnewItem input {
+      width: 100%;
+      height: 45px;
+      padding: 0px 55px 0px 1%;
+      border: 1px solid #d4d4d4; }
+    .todolist .addnewItem button {
+      background: #49bf67;
+      border: 0px;
+      text-align: center;
+      color: #FFFFFF;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      height: 45px;
+      width: 50px; }
