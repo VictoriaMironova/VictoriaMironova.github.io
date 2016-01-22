@@ -557,9 +557,33 @@ section.nopanel{margin-left:10px;}
 
     }
   }
-  tr:nth-child(even){
-    background-color:#f9f9f9;
+  a.reply_support
+  {
+    color:#a2a2a2;
+    position: absolute;
+    right:17px;
+    bottom:2px;
+    font-size:12px;
   }
+   a.delete_support
+   {
+     color:#a2a2a2;
+     position: absolute;
+     right:4px;
+     bottom:2px;
+     font-size:12px;
+   }
+  tr a{
+    display: none;
+  }
+  tr:hover{
+    background-color:#f9f9f9;
+
+    a{
+      display: inline-block;
+    }
+  }
+
   tr:last-child td{
     border-bottom:0px;
   }

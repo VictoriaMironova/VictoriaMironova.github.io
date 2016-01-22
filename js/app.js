@@ -93,7 +93,7 @@ var supportData=JSON.parse(supportinfo);
 function loadSupport(){
     for (var i=0;i<supportData.length;i++)
     {
-        var supportLine='<tr><td><img src="'+supportData[i].picture+'"><span class="'+supportData[i].Status+'"></span></td><td>'+supportData[i].Message+'</td></tr>';
+        var supportLine='<tr><td><img src="'+supportData[i].picture+'"><span class="'+supportData[i].Status+'"></span></td><td>'+supportData[i].Message+'<a href="#" class="reply_support"><i class="fa fa-reply"></i></a><a href="#" class="delete_support"><i class="fa fa-trash"></i></a></td></tr>';
         $('.TechSupport table').append(supportLine);
     }
 }
