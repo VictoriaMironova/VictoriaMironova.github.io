@@ -116,12 +116,12 @@ var dataEvents = [
     {
         id: 999,
         title: 'Repeating Event',
-        start: '2016-01-16T16:00:00'
+        start: '2016-01-27T16:00:00'
     },
     {
         title: 'Conference',
         start: '2016-01-11',
-        end: '2016-01-13'
+        end: '2016-01-27'
     },
     {
         title: 'Meeting',
