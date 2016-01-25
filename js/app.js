@@ -120,8 +120,8 @@ var dataEvents = [
     },
     {
         title: 'Conference',
-        start: '2016-01-11',
-        end: '2016-01-27'
+        start: '2016-01-26',
+        end: '2016-01-29'
     },
     {
         title: 'Meeting',
