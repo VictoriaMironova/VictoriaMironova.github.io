@@ -1,6 +1,18 @@
 /**
  * Created by Viktoriia_Mironova on 1/19/2016.
  */
+$(document).ready(function() {
+    loadProfile();
+    loadDashboard();
+    loadFileUpload();
+    loadSupport();
+    loadCalendar();
+    loadBrowsers();
+    drawChart();
+    drawLines();
+    drawTraffic();
+
+});
 /*------------------menu----------------------------*/
 $('.main-nav a').click(function(){
     $(this).toggleClass('closed');
