@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Band</title>
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+<header id="home">
+    <div class="wrap">
+        <nav class="MainNav">
+            <ul>
+                <li class="active"><a href="#">home</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">music</a></li>
+                <li><a href="#">tours</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </nav>
+        <h1><span>We are</span> The Band</h1>
+    </div>
+</header>
+<section class="about" id="about">
+    <div class="wrap">
+        <div class="block-wide">
+            <h3>Meet our band</h3>
+            <div id="slides" class="slides">
+
+                <div>
+                    <div class="band">
+                        <div class="block-left">
+                            <img src="images/CurtSheard.png" title="Lawrie Alton - Vocalist"/>
+                            <h2><span>Lawrie</span>Alton</h2>
+                        </div>
+                        <div class="block-right">
+                            <p>Lawrie Alton, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="band">
+                        <div class="block-left">
+                            <img src="images/CurtSheard.png" title="Charles Timmy - Guitar"/>
+                            <h2><span>Charles</span>Timmy</h2>
+                        </div>
+                        <div class="block-right">
+                            <p>Charles Timmy, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="band">
+                        <div class="block-left">
+                            <img src="images/CurtSheard.png" title="Curt Shread - Bass"/>
+                            <h2><span>Curt</span>Sheard</h2>
+                        </div>
+                        <div class="block-right">
+                            <p>Court Sheard, swag iPhone neutra williamsburg, sriracha you probably haven't heard of them PBR&B marfa seitan. Four dollar toast wayfarers helvetica etsy, affogato pinterest schlitz. Squid yr mlkshk, pinterest pour-over polaroid photo booth. Yr fixie plaid kogi.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="band">
+                        <div class="block-left">
+                            <img src="images/CurtSheard.png" title="Cade Ryker - Drums"/>
+                            <h2><span>Cade</span>Ryker</h2>
+                        </div>
+                        <div class="block-right">
+                            <p>Cade Ryker, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="band">
+                        <div class="block-left">
+                            <img src="images/CurtSheard.png" title="Tommie Brendan - Electronics"/>
+                            <h2><span>Tommie</span>Brendan</h2>
+                        </div>
+                        <div class="block-right">
+                            <p>Tommie Brendan, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="music" id="music">
+    <div class="wrap">
+        <div class="block-left">
+            <div class="albumCover">
+                <img src="images/albumCover.png" title="Surprise without flaws - The Band"/>
+            </div>
+        </div>
+        <div class="block-right">
+            <div class="player">
+                <h3>Now playing</h3>
+                <h4></h4>
+                <div class="file"></div>
+                <div class="btnsPlayer">
+                    <button id="prevBtn"><i class="fa fa-backward"></i></button>
+                    <button id="Play" style="display: none" onclick="simplePlay();"><i class="fa fa-play"></i></button>
+                    <button id="Pause" onclick="simplePause()"><i class="fa fa-pause"></i></button>
+                    <button id="nextBtn"><i class="fa fa-forward"></i></button>
+                </div>
+                <audio id="AudioPlayer" src=""></audio>
+                <div id="progressBar"><span id="progress"></span><span id="pointProgress"></span></div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="block-left">
+            <h3>Discography</h3>
+            <div class="discsList">
+
+            </div>
+        </div>
+        <div class="block-right">
+            <div class="discAudioList">
+                <h4></h4>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="tours" id="tours">
+    <div class="wrap">
+        <h3>Tour Dates</h3>
+
+            <div class="tours-slider">
+                <div class="slider-base"></div>
+                <div class="slider-concerts"></div>
+            </div>
+
+        <div class="tickets">
+            <div></div>
+        </div>
+    </div>
+</section>
+<section class="contact" id="contact">
+    <div class="wrap">
+        <div class="contact-form">
+            <h3>Contact</h3>
+            <div class="phone-contact">+48 202 - 555 - 0114</div>
+            <div class="subscribe-contact">
+                <form>
+                    <button type="submit">Subscribe</button>
+                    <input type="text">
+                </form>
+                <div class="social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <footer>
+
+                <div class="block-right">
+                    <nav>
+                        <ul>
+                            <li><a href="#">home</a></li>
+                            <li><a href="#">about</a></li>
+                            <li><a href="#">music</a></li>
+                            <li><a href="#">tours</a></li>
+                            <li><a href="#">contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            <div class="block-left">
+                <div class="copyright">Copyright 2015 &copy; By The Band</div>
+            </div>
+        </footer>
+    </div>
+</section>
+
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="js/main.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>
