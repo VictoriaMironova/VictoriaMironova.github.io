@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced JavaScript</title>
+    <link rel="stylesheet" type="text/css" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <style>
+        i{
+            font-size:11px;
+            line-height: 14px;
+            display: block;
+        }
+        aside{
+            display: inline-block;
+            width:50%;
+            float:left;
+        }
+        h3 b{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+    <section>
+        <h1>Advanced JavaScript</h1>
+        <h3>Objects, Constructors and prototypes</h3>
+        <i>Об’єкти, конструктори та прототипи</i>
+    </section>
+    <section>
+
+            <h1>Objects</h1>
+            <i>Об’єкти</i>
+            <p>
+                In JavaScript, almost "everything" is an object.
+                <i>В JavaScript, майже "все" є об'єктом</i>
+                <pre>
+    Booleans can be objects (or primitive data treated as objects)
+    Numbers can be objects (or primitive data treated as objects)
+    Strings can be objects (or primitive data treated as objects)
+    Dates are always objects
+    Maths are always objects
+    Regular expressions are always objects
+    Arrays are always objects
+    Functions are always objects
+    Objects are objects
+    In JavaScript, all values, except primitive values, are objects.
+
+    Primitive values are: strings ("John Doe"), numbers (3.14), true, false, null, and undefined.
+                </pre>
+            </p>
+        </section>
+        <section>
+            <h3>Objects are Variables Containing Variables
+                <i>Об'єкти це змінні, що містять змінні</i>
+            </h3>
+
+
+            <p>JavaScript variables can contain single values
+                <i>Змінні JavaScript можуть містити поодинокі значення</i>
+            </p>
+
+            <pre><code class="hljs" data-trim contenteditable>
+                var person = "John Doe";
+            </code></pre>
+            <p>Objects are variables too. But objects can contain many values.
+                    <br/><br/>
+                The values are written as <b>name : value</b> pairs (name and value separated by a colon).
+                <i>Об'єкти є змінними теж. Але об'єкти можуть містити безліч значень. Значення записуються у вигляді: <b>ім'я: значення</b> (ім'я і значення через двокрапку).</i>
+             </p>
+            <pre><code class="hljs" data-trim contenteditable>
+                var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+            </code></pre>
+        </section>
+        <section>
+            <section>
+                <h3>The named values, in JavaScript objects, are called <b>properties</b>. <i>Названі значення, в об'єктах JavaScript, називаються властивостями.</i></h3>
+                <aside>
+                    <pre><code class="hljs" data-trim contenteditable>
+                        var person = {
+            firstName:"John",
+            lastName:"Doe",
+            age:50,
+            eyeColor:"blue"
+                        };
+                    </code></pre>
+                </aside>
+                <aside>
+                    <table>
+                        <tbody><tr>
+                            <th>Property</th>
+                            <th>Value</th>
+                        </tr>
+                        <tr>
+                            <td>firstName</td>
+                            <td>John</td>
+                        </tr>
+                        <tr>
+                            <td>lastName</td>
+                            <td>Doe</td>
+                        </tr>
+                        <tr>
+                            <td>age</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>eyeColor</td>
+                            <td>blue</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </aside>
+            </section>
+            <section>
+                <h3>Accessing JavaScript Properties
+                    <i>Доступ до властивостей JavaScript</i></h3>
+
+                The syntax for accessing the property of an object is:
+                <pre><code class="hljs" data-trim contenteditable>objectName.property          // person.age</code></pre>
+                or
+                <pre><code class="hljs" data-trim contenteditable>objectName["property"]       // person["age"]</code></pre>
+                <h4>Example</h4>
+                <pre><code class="hljs" data-trim contenteditable>concole.log(person.firstname + " is " + person.age + " years old.");
+person["firstname"] + " is " + person["age"] + " years old.";
+                </code></pre>
+            </section>
+            <section>
+                <h3>JavaScript for...in Loop</h3>
+                The JavaScript for...in statement loops through the properties of an object.
+                <i>JavaScript вираз for...in в циклі перебирає всі властивості об'єкта</i>
+                <pre><code class="hljs" data-trim contenteditable>for (variable in object) {
+    code to be executed
+}
+                </code></pre>
+                <h4>Example</h4>
+                    <pre><code class="hljs" data-trim contenteditable>var txt = "";
+var person = {fname:"John", lname:"Doe", age:25};
+var x;
+for (x in person) {
+    txt += person[x] + " ";
+}
+document.getElementById("demo").innerHTML = txt;
+                    </code></pre>
+
+            </section>
+            <section>
+                <h3>Adding New Properties
+                <i>Додавання нової властивості</i></h3>
+                You can add new properties to an existing object by simply giving it a value.
+                <i>Ви можете додати властивість об’єкту просто присвоївши їй значення</i>
+                <pre><code class="hljs" data-trim contenteditable>person.nationality = "English";</code></pre>
+            </section>
+            <section>
+                <h3>Deleting Properties
+                <i>Видалення властивостей</i></h3>
+                The delete keyword deletes a property from an object:
+                <i>Ключове слово delete видаляє властивість</i>
+                 <pre><code class="hljs" data-trim contenteditable>var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+delete person.age;   // or delete person["age"];</code></pre>
+                The delete keyword deletes both the value of the property and the property itself.
+                <i>Ключове слово delete видаляє значення властивості та саму властивість</i>
+            </section>
+        </section>
+        <section>
+            <section>
+            <h3>An <b>object method</b> is an <b>object property</b> containing a function definition.
+            <i>Метод об'єкту -це властивість об'єкта, що містить визначення function.</i></h3>
+            <table>
+                <tbody><tr>
+                    <th>Property</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>firstName</td>
+                    <td>John</td>
+                </tr>
+                <tr>
+                    <td>lastName</td>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <td>age</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>eyeColor</td>
+                    <td>blue</td>
+                </tr>
+                <tr>
+                    <td>fullName</td>
+                    <td>function() {return this.firstName + " " + this.lastName;}</td>
+                </tr>
+                </tbody></table>
+            </section>
+            <section>
+                <h3>Accessing Object Methods
+                    <i>Доступ до методів об’єкту</i></h3>
+                You create an object method with the following syntax:
+                <i>Ви створюєте метод наступним чином:</i>
+                <pre><code class="hljs" data-trim contenteditable>methodName : function() { code lines }</code></pre>
+                You access an object method with the following syntax:
+                <i>Ви отримуєте доступ до методу наступним чином:</i>
+                <pre><code class="hljs" data-trim contenteditable>objectName.methodName()</code></pre>
+            </section>
+            <section>
+                <h3>Examples</h3>
+                <aside>
+                    <pre><code class="hljs" data-trim contenteditable>
+                        var person = {
+firstName: "John",
+lastName : "Doe",
+id       : 5566,
+fullName : function() {
+    return this.firstName + " " + this.lastName;
+}
+};
+
+document.getElementById("demo").innerHTML = person.fullName();
+                    </code></pre>
+                    <p class="fragment">John Doe</p>
+                </aside>
+                <aside>
+                    <pre><code class="hljs" data-trim contenteditable>
+var person = {
+firstName: "John",
+lastName : "Doe",
+id       : 5566,
+fullName : function() {
+    return this.firstName + " " + this.lastName;
+}
+};
+
+document.getElementById("demo").innerHTML = person.fullName;
+                        </code></pre>
+                    If you access the fullName property, without(), it will return the function definition
+                    <i>Якщо ви звернитись до методу без (), ви отримаєте визначення цього методу</i>
+                    <p class="fragment" style="font-size:20px">function () { return this.firstName + " " + this.lastName; }</p>
+                </aside>
+
+            </section>
+            <section>
+                <h3>Adding a Method to an Object
+                <i>Додавання методу в об’єкт</i></h3>
+                <pre><code class="hljs" data-trim contenteditable>
+                    person.name = function () {
+    return this.firstName + " " + this.lastName;
+};
+
+document.getElementById("demo").innerHTML =person.name();
+                </code></pre>
+            </section>
+            <section>
+                <h3>Using Built-In Methods
+                <i>Використання передвизначених методів</i></h3>
+
+                <pre><code class="hljs" data-trim contenteditable>var message = "Hello world!";
+var x = message.toUpperCase();</code></pre>
+            </section>
+        </section>
+        <section>
+            <h3>Creating a JavaScript Object
+            <i>Створення JavaScript об’єкту</i></h3>
+            <aside>
+                <h4>1. Using an Object Literal
+                <i>Використовуючи літерали об’єкту</i></h4>
+                This is the easiest way to create a JavaScript Object.<br/>
+                Using an object literal, you both define and create an object in one statement.
+                <pre><code class="hljs" data-trim contenteditable>
+                    var person = {
+    firstName:"John",
+    lastName:"Doe",
+    age:50,
+    eyeColor:"blue"
+};
+                </code></pre>
+            </aside>
+            <aside>
+                <h4>2. Using the JavaScript Keyword new
+                <i>Використовуючи ключове слово new</i></h4>
+                The following example also creates a new JavaScript object with four properties:
+                <pre><code class="hljs" data-trim contenteditable>
+                    var person = new Object();
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue";
+                </code></pre>
+            </aside>
+        </section>
+        <section>
+                <h1>Constructors</h1>
+                <i>Конструктори</i>
+        </section>
+        <section>
+            <section>
+            <h3>3. Using an <b>Object Constructor</b>
+            <i>Використовуючи конструктор об’єктів</i></h3>
+            The examples above are limited in many situations. They only create a single object.
+            Sometimes we like to have an "object type" that can be used to create many objects of one type.<br/>
+            The standard way to create an "object type" is to use an object constructor function:
+            <pre><code class="hljs" data-trim contenteditable>
+                function Person(first, last, age, eye) {
+                this.firstName = first;
+                this.lastName = last;
+                this.age = age;
+                this.eyeColor = eye;
+                }
+var myFather = new Person("John", "Doe", 50, "blue");
+var myMother = new Person("Sally", "Rally", 48, "green");
+            </code></pre>
+            </section>
+            <section>
+                <h3>The <b>this</b> Keyword
+                <i>Ключове слово this</i>
+                </h3>
+                In JavaScript, the thing called <b>this</b>, is the object that "owns" the JavaScript code.
+                <i>В JavaScript, в те, що називається this, є об'єктом, який "володіє" кодом JavaScript.</i>
+<br><br>
+                The value of <b>this</b>, when used in a function, is the object that "owns" the function.
+                <i>Значення this, при використанні в функції, є об'єктом, який "володіє" функцією.</i>
+                <br><br>
+                The value of <b>this</b>, when used in an object, is the object itself.
+                <i>Значенням this, при використанні в якості об'єкта, є сам об'єкт.</i>
+
+
+
+            </section>
+        </section>
+        <section>
+                <h3>Built-in JavaScript Constructors
+                <i>Вбудовані конструктори JavaScript</i></h3>
+                JavaScript has built-in constructors for native objects
+                <pre><code class="hljs" data-trim contenteditable>
+                    var x1 = new Object();    // A new Object object
+var x2 = new String();    // A new String object
+var x3 = new Number();    // A new Number object
+var x4 = new Boolean()    // A new Boolean object
+var x5 = new Array();     // A new Array object
+var x6 = new RegExp();    // A new RegExp object
+var x7 = new Function();  // A new Function object
+var x8 = new Date();      // A new Date object
+                    </code></pre>
+        </section>
+        <section>
+            <h3>Adding New Methods in Constructors
+            <i>Додавання нових методів в конструкторах</i></h3>
+            <pre><code class="hljs" data-trim contenteditable>
+function Person(firstName, lastName, age, eyeColor) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.eyeColor = eyeColor;
+    this.changeName = function (name) {
+        this.lastName = name;
+    };
+}
+var myMother = new Person("Sally", "Rally", 48, "green");
+myMother.changeName("Doe");
+            </code></pre>
+        </section>
+        <section>
+            <h1>Prototypes</h1>
+            <i>Прототипи</i>
+        </section>
+        <section>
+            <h3>JavaScript Prototypes</h3>
+            Every JavaScript object has a prototype. The prototype is also an object.
+            <i>Кожний об’єкт JavaScript має прототип. Прототип є також об’єктом</i>
+
+            All JavaScript objects inherit their properties and methods from their prototype.
+            <i>Всі об'єкти JavaScript успадковують властивості і методи від їх прототипу.</i>
+
+            Objects created using an object literal, or with new Object(), inherit from a prototype called Object.prototype.
+            <i>Об’єкти створені задопомогою літералу чи конструкції new Object(), успадковують від прототипу Object.prototype</i>
+
+            Objects created with new Date() inherit the Date.prototype.
+            <i>Об’єкти створені з new Date() успадковують Date.prototype</i>
+           
+            All JavaScript objects (Date, Array, RegExp, Function, ....) inherit from the Object.prototype.
+            <i>Всі JavaScript об’єкти успадковують від Object.prototype</i>
+        </section>
+        <section>
+            <h3>Creating a Prototype
+            <i>Створення прототипу</i></h3>
+            <pre><code class="hljs" data-trim contenteditable>
+                function Person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+            </code></pre>
+        </section>
+        <section>
+            <h3>Using the prototype Property
+            <i>Використання властивості prototype</i></h3>
+            <pre><code class="hljs" data-trim contenteditable>
+                function Person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+Person.prototype.name = function() {
+    return this.firstName + " " + this.lastName;
+};
+Person.prototype.nationality = "English";
+var myMother = new Person("Sally", "Rally", 48, "green");
+concole.log(myMother.name());
+            </code></pre>
+        </section>
+
+</div>
+</div>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center:true,
+        width: 1240,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+        maxScale: 1.5,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+            { src: 'plugin/notes/notes.js', async: true }
+        ]
+    });
+
+</script>
+</body>
+</html>
