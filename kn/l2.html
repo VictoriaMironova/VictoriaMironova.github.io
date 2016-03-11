@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced JavaScript</title>
+    <link rel="stylesheet" type="text/css" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <style>
+        i{
+            font-size:11px;
+            line-height: 14px;
+            display: block;
+        }
+        aside{
+            display: inline-block;
+            width:50%;
+            float:left;
+        }
+        h3 b{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+    <section>
+        <h1>Advanced JavaScript</h1>
+        <h3>Object Oriented Programming</h3>
+        <i>Об’єктно-орієнтоване програмування</i>
+    </section>
+    <section>
+
+            <h1>Principles of OOPs</h1>
+            <i>Принципи ООП</i>
+            <p class="fragment">Encapsulation</p>
+            <p class="fragment">Inheritance</p>
+            <p class="fragment">Polymorphism</p>
+        </section>
+        <section>
+        <section>
+            <h3>Encapsulation
+                <i>Інкапсуляція</i>
+            </h3>
+
+
+            <p>Encapsulation is:
+                <ul>
+                <li>Binding the data with the code that manipulates it.</li>
+                <li>It keeps the data and the code safe from external interference</li>
+            </ul>
+                <i>Інкапсуляція це:<br/>
+                    - Зв'язування даних з кодом, який маніпулює ними<br>
+                    - Вона зберігає дані і код в безпеці від зовнішнього втручання
+                </i>
+            </p>
+        </section>
+
+            <section>
+                <h3>Lets create an Object with Constructor</i></h3>
+                <i>Створюємо об’єкт за допомогою конструктора</i>
+                    <pre><code class="hljs" data-trim contenteditable>
+                        function Person(first, age) {
+    this.firstName = first;
+    this.age = age;
+    this.displayInfo = function(){
+        document.write("Name: " + this.firstName + "; Age: " + this.age);
+    };
+}
+var myMother = new Person("Sally", 48);
+console.log(myMother.firstName);
+myMother.firstName="Tod";
+console.log(myMother.firstName);
+                    </code></pre>
+                <p>By default, all object properties are public, accessible, and we can refer to them from any program's place
+                <i>За замовчуванням всі властивості об'єктів є публічними, загальнодоступними, і ми до них можемо звернутися з будь-якого місця програми</i>
+                </p>
+
+            </section>
+            <section>
+                <h3>But we can close them from external access by making the properties as the local variables</h3>
+                <pre><code class="hljs" data-trim contenteditable>
+                    function Person(first, age) {
+    this.firstName = first;
+    var _age = age;
+    this.displayInfo = function(){
+        document.write("Name: " + this.firstName + "; Age: " + _age);
+    };
+    this.getAge = function() {
+        return _age;
+    }
+    this.setAge = function(age) {
+        if(typeof age === "number" && age >0 && age<110){
+            return _age = age;
+        } else {
+            console.log("Should be number");
+        }
+    }
+}
+var myMother = new Person("Sally", 48);
+console.log(myMother._age); //undefined
+console.log(myMother.getAge());//48
+myMother._age=35;
+console.log(myMother.getAge());//48
+myMother.setAge(39);
+console.log(myMother.getAge());//39
+                </code></pre>
+            </section>
+            <section>
+                <h3>We also can enclose methods making them local</h3>
+
+                    <pre><code class="hljs" data-trim contenteditable>function Person(first, age) {
+    this.firstName = first;
+    var _age = age;
+    function displayInfo(){
+        document.write("Name: " + this.firstName + "; Age: " + _age);
+    };
+    this.showPerson = function(){
+        displayInfo();
+    }
+}
+var myMother = new Person("Sally", 48);
+myMother.displayInfo(); //Uncaught TypeError: myMother.displayInfo is not a function
+myMother.showPerson();
+                    </code></pre>
+
+            </section>
+        </section>
+        <section>
+            <section>
+            <h3>Inheritance
+            <i>Успадкування</i></h3>
+            <p>Inheritance is the mechanism by which an object acquires the some/all properties of another object.
+                It supports the concept of hierarchical classification.
+            <i>Спадкування - це механізм, за допомогою якого об'єкт набуває деяких / всіх властивостей іншого об'єкта.
+                Воно підтримує концепцію ієрархічної класифікації.</i>
+            </p>
+            </section>
+            <section>
+                <h3>Inheritance in Javascript
+                    <i>Успадкування в Javascript</i></h3>
+               <p>In most languages, there are classes and objects. Classes inherit from other classes.
+                   <br/><br/>
+                   In JavaScript, the inheritance is prototype-based. That means that there are no classes. Instead, an object inherits from another object
+                   <i>У більшості мов, є класи і об'єкти. Класи успадковуються від інших класів.
+                       В JavaScript успадкування здійснюється на базі прототипів. Це означає, що немає класів. Замість цього, об'єкт успадковує від іншого об'єкта
+                   </i>
+               </p>
+            </section>
+            <section>
+                <h3>Examples</h3>
+                <aside>
+                    <pre><code class="hljs" data-trim contenteditable>
+var animal = { eats: true }
+var rabbit = { jumps: true }
+rabbit.__proto__ = animal  // inherit
+alert(rabbit.eats) // true
+                    </code></pre>
+                </aside>
+                <aside>
+                  <img src="http://javascript.info/files/tutorial/intro/object/proto4.png"/>
+                </aside>
+
+            </section>
+            <section>
+                <h3>Pseudo-classical pattern
+                <i>Шаблон псевдокласу</i></h3>
+                <p>In pseudo-classical pattern, the object is created by a constructor function and it’s methods are put into the prototype.
+                    Pseudo-classical pattern is used in frameworks, for example in Google Closure Library. Native JavaScript objects also follow this pattern.</p>
+                <i>У шаблоні псевдокласу, об'єкт створюється за допомогою функції конструктора, а його методи поміщаються в прототип.
+
+                    Шаблон Псевдокласу використовується у фреймворках, наприклад, в Google Closure Library. Рідні JavaScript об'єкти також слідують цим шаблонам.</i>
+
+            </section>
+            <section>
+                <h3>Example</h3>
+
+<aside>
+                <pre><code class="hljs" data-trim contenteditable>function Animal(name) {
+    this.name = name
+}
+
+Animal.prototype = {
+    canWalk: true,
+    sit: function() {
+        this.canWalk = false
+        alert(this.name + ' sits down.')
+    }
+}
+var animal = new Animal('Pet') // (1)
+alert(animal.canWalk) // true
+animal.sit()             // (2)
+alert(animal.canWalk) // false</code></pre>
+                    </aside>
+                    <aside>
+                        <img src="http://javascript.info/files/tutorial/advanced/oop/animal_constructor.png"/>
+                    </aside>
+            </section>
+            <section>
+            <h3>Inheritance</h3>
+            <aside>
+                <pre><code class="hljs" data-trim contenteditable>
+function Animal(name) {
+    this.name = name
+}
+Animal.prototype = {
+    canWalk: true,
+    sit: function() {
+        this.canWalk = false
+        alert(this.name + ' sits down.')
+    }
+}
+function Rabbit(name) {
+    this.name = name
+}
+// inherit
+Rabbit.prototype = inherit(Animal.prototype)
+// Rabbit methods
+Rabbit.prototype.jump = function() {
+        this.canWalk = true
+        alert(this.name + ' jumps!')
+}
+var rabbit = new Rabbit('Sniffer')
+rabbit.sit()   // Sniffer sits.
+rabbit.jump()  // Sniffer jumps!
+                </code></pre>
+            </aside>
+            <aside>
+               <img src="http://javascript.info/files/tutorial/advanced/oop/animal_inherit.png">
+            </aside>
+        </section>
+            <section>
+                <h3>Calling superclass constructor
+                <i>Виклик конструктора суперкласу</i></h3>
+                <p>
+                    The “superclass” constructor is not called automatically. We can call it manually by applying the Animal function to current object:
+                    <i>Конструктор "суперкласу" не викликається автоматично. Ми можемо назвати його вручну, застосовуючи функцію Animal до поточного об'єкту:</i>
+                </p>
+                <pre><code class="hljs" data-trim contenteditable>
+function Rabbit(name) {
+    Animal.apply(this, arguments)
+}
+                </code></pre>
+                <p>That executes Animal constructor in context of the current object, so it sets the name in the instance.
+                <i>Це виконує конструктор Animal в контексті поточного об'єкта, тому він задає ім'я в екземплярі.</i>
+                </p>
+            </section>
+        </section>
+        <section>
+            <section>
+            <h3>Polymorphism</b>
+            <i>Поліморфізм</i></h3>
+                <p>
+                    Polymorphism means to process objects differently based on their data type.<br/><br/>
+                    In other words it means, one method with multiple implementation, for a certain class of action. And which implementation to be used is decided at runtime depending upon the situation (i.e., data type of the object)
+                    <i>Поліморфізм означає обробку об'єктів по-різному в залежності від їх типу даних.
+                        Іншими словами, це означає, один метод з множинною реалізації, для певного класу дій. Яка реалізація з множини буде використовуватися визначається під час виконання програми в залежності від ситуації (тобто тип даних об'єкта)</i>
+                </p>
+            </section>
+            <section>
+                <h3>To override a parent method, replace it in the prototype of the child:
+                <i>Для того, щоб перевизначити метод, замініть його в прототипі нащадка:</i>
+                </h3>
+                <pre><code class="hljs" data-trim contenteditable>
+Rabbit.prototype.sit = function() {
+    alert(this.name + ' sits in a rabbity way.')
+}
+                </code></pre>
+                <p>A call to rabbit.sit() searches sit on the chain rabbit -> Rabbit.prototype -> Animal.prototype and finds it in Rabbit.prototype without
+                    ascending to Animal.prototype.
+<br/><br/>
+                    Of course, we can even more specific than that. A method can be overridden directly in the object:
+                <i>Виклик функції rabbit.sit() шукає реалізацію sit по ланцюгу rabbit -> Rabbit.prototype -> Animal.prototype та знаходить її у Rabbit.prototype
+                    без звертання до Animal.prototype.<br>
+                    Звичайно, ми можемо бути ще конкретніше. Метод може бути перевизначений безпосередньо в об'єкті:
+                </i>
+                </p>
+<pre><code class="hljs" data-trim contenteditable>
+rabbit.sit = function() {
+    alert('A special sit of this very rabbit ' + this.name)
+}
+
+</code></pre>
+            </section>
+            <section>
+                <h3>Calling a parent method after overriding
+                <i>Виклик батьківського методу після перевизначення</i></h3>
+                <p>
+                    When a method is overwritten, we may still want to call the old one. It is possible if we directly ask parent prototype for it.
+                    <i>Коли метод є перевизначеним, ми все ж хочемо викликати його першу реалізацію. Це можливо зродити звернувшись до прототипу батька</i>
+                </p>
+                <pre><code class="hljs" data-trim contenteditable>
+Rabbit.prototype.sit = function() {
+    alert('calling superclass sit:')
+    Animal.prototype.sit.apply(this, arguments)
+}
+                    </code></pre>
+            <p>All parent methods are called with apply/call to pass current object as this. A simple call Animal.prototype.sit() would use Animal.prototype as this.
+            <i>Всі батьківські методи викликаються з методом apply/call для того, щоб передати поточний об’єкт як this. Якщо просто викликати Animal.prototype.sit(), Animal.prototype буде використано як this</i></p>
+        </section>
+        </section>
+        <section>
+            <section>
+                <h3>Factory constructor pattern
+                <i>Шаблон конструктор фабрика</i></h3>
+            </section>
+            <section>
+                <h3>Definition</h3>
+                <p>Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+                <i>Визначає інтерфейс для створення об'єкта, але залишає подклассам рішення про те, який клас інстанціювати. Фабричний метод дозволяє класу делегувати створення підкласів.</i></p>
+            </section>
+            <section>
+                <h3>Declaration</h3>
+                <p>The constructor is defined as a function which returns a new object:
+                <i>Конструктор визначається як функція, що повертає новий об’єкт</i>
+                </p>
+                <pre><code class="hljs" data-trim contenteditable>
+function Animal(name) {
+    return {
+        run: function() {
+            alert(name + " is running!")
+        }
+    }
+}
+                </code></pre>
+                <p>Usage:</p>
+                <aside>
+                    <pre><code class="hljs" data-trim contenteditable>
+var animal = Animal("fox")
+animal.run()
+                    </code></pre>
+                </aside>
+                <aside><img src="http://javascript.info/files/tutorial/intro/object/nonew.png"></aside>
+            </section>
+            <section>
+                <h3>Inheritance</h3>
+                <p>Rabbit is made by creating an Animal, and then mutating it:
+                <i>Кролик створується шляхом створення Тварини, а потім змінюємо тварину</i></p>
+                <pre><code class="hljs" data-trim contenteditable>
+function Rabbit(name) {
+    var rabbit = Animal(name) // make animal
+    rabbit.bounce = function() { // mutate
+        this.run()
+        alert(name + " bounces to the skies! :)")
+    }
+    return rabbit // return the result
+}
+var rabbit = Rabbit("rab")
+rabbit.bounce()
+                </code></pre>
+            </section>
+            <section>
+                <h3>Private/protected methods (encapsulation)</h3>
+                <p>Local variables and functions become private:
+                <i>Локальні змінні та функції стають приватними:</i>
+                </p>
+                <pre><code class="hljs" data-trim contenteditable>
+function Bird(name) {
+    var speed = 100                    // private prop
+    function openWings() { /* ... */ } // private method
+    return {
+        fly: function() {
+            openWings()
+            this.move()
+        },
+        move: function() { /*...*/ }
+    }
+}
+                    </code></pre>
+            </section>
+            <section>
+                <h3>Public methods call</h3>
+                <p style="font-size:0.8em">A public method can be called as this.move() from another public method, but not from a private method.
+                <br/><br/>
+                    A private method like openWings can’t reference this. There’s no reference to the new object in a local function.
+<br/><br/>
+                    One way to solve that is to bind the new object to a local variable prior to returning:
+                <i>Публічний метод може бути викликаний як this.move() з іншого публічного методу, но не з приватного.
+                    Приватний метод, такия як openWings, не може посилатись на this, так як в локальній фунції немає посилання на новий об’єкт.
+                    Один із способів вирішити це - зв'язати новий об'єкт в локальну змінну до повернення.
+                </i>
+                </p>
+                <pre><code class="hljs" data-trim contenteditable>
+function Bird(name) {
+    function doFly() {
+        openWings()
+        self.move()
+    } // private method
+    var self ={
+        fly: function() { doFly() },
+        move: function() { /*...*/ }
+        }
+    return self
+}
+                    </code></pre>
+            </section>
+        </section>
+
+
+
+</div>
+</div>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center:true,
+        width: 1240,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+        maxScale: 1.5,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+            { src: 'plugin/notes/notes.js', async: true }
+        ]
+    });
+
+</script>
+</body>
+</html>
