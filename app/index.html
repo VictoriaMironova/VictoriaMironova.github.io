@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Target Manager Prototype</title>
+    <link media="all" rel="stylesheet" href="css/style.css">
+    <link media="all" rel="stylesheet" href="css/ipreo-common-styles.css">
+    <link media="all" rel="stylesheet" href="css/navigation.css">
+    <link media="all" rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdn.rawgit.com/angular-ui/ui-grid.info/gh-pages/release/3.0.0-rc.20/ui-grid.min.css">
+    <script data-require="jquery@2.1.3" data-semver="2.1.3" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.0/angular.js"></script>
+    <script src="http://cdn.rawgit.com/angular-ui/ui-grid.info/gh-pages/release/3.0.0-rc.21/ui-grid.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-touch.js"></script>
+    <script src="js/gridController.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.1.3.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <nav id="menu-1" class="ipreo-nav">
+    <section class="ipreo-nav-header">
+        <div class="ipreo-nav-left">
+            <a href="" class="ipreo-nav-logo"></a>
+        </div>
+        <div class="ipreo-nav-center">
+            <form>
+						<span class="ipreo-nav-search-wrapper">
+      <i class="fa fa-search"></i>
+      <input class="ipreo-nav-search" type="text" placeholder="Fast find by Event Name">
+      <i class="fa fa-angle-down"></i>
+    </span>
+                <small>Advanced</small>
+            </form>
+        </div>
+
+        <div class="ipreo-nav-right">
+            <div class="ipreo-nav-user-select js-dropdown">
+                <img src="images/a1.jpg" class="ipreo-nav-user-avatar"/>
+                <span class="ipreo-nav-user-select-dropdown  js-dropdown-current">Sal Sellside</span>
+            </div>
+            <a href="#" class="ipreo-nav-user-menu-link">
+                <span class="fa fa-comment-o"></span>
+            </a>
+            <a href="#" class="ipreo-nav-user-menu-link">
+                <span class="fa fa-bell-o"></span>
+            </a>
+        </div>
+    </section>
+
+    <section class="ipreo-nav-level-2">
+        <ul class="ipreo-nav-links"><li class="hoverTrigger"><a href="javascript:void(0)">Calendars<i class="fa fa-angle-down fa-indicator"></i></a><ul class="ipreo-nav-dropdown-multilevel effect-fade"><li><a href="/IP/UI/Event/EventCalendar.aspx">Event Calendar</a></li><li><a href="/IP/UI/Event/EventList.aspx">My Event List</a></li><li><a href="/IP/UI/Meeting/MeetingRequests.aspx?mode=global">Cross Event Requests</a></li><li><a href="/IP/UI/Conferences/Event/ConferenceCalendar.aspx">Conferences</a></li><li class="hoverTrigger"><a class="has-children" href="javascript:void(0)">My Alerts</a><ul class="ipreo-nav-dropdown-multilevel effect-fade"><li class="hoverTrigger"><a href="/IP/UI/Event/EventAlert.aspx">New Events</a></li></ul></li></ul></li><li class="hoverTrigger"><a href="javascript:void(0)">Event<i class="fa fa-angle-down fa-indicator"></i></a><ul class="ipreo-nav-dropdown-multilevel effect-fade"><li><a href="/IP/UI/Event/EventDetails.aspx?create=1">Create Event</a></li></ul></li><li class="hoverTrigger"><a href="javascript:void(0)">Reports<i class="fa fa-angle-down fa-indicator"></i></a><ul class="ipreo-nav-dropdown-multilevel effect-fade"><li class="is-header">Cross Event Reports</li><li><a href="/IP/UI/Report/AccountDevelopment/AccountDevelopmentsReport.aspx">Account Developments</a></li><li><a href="/IP/UI/Report/GlobalAnalysts/GlobalAnalystSummaryReport.aspx">Analysts Summary</a></li><li><a href="/IP/UI/Report/CompanyDevelopment/CompanyDevelopmentReport.aspx?ReportFrom=1">Company Development</a></li><li class="hoverTrigger"><a class="has-children" href="javascript:void(0)">Global Analysts</a><ul class="ipreo-nav-dropdown-multilevel effect-fade"><li class="hoverTrigger"><a href="/IP/UI/Report/GlobalAnalysts/GlobalAnalystsReport.aspx?reportBy=0">By Event</a></li><li class="hoverTrigger"><a href="/IP/UI/Report/GlobalAnalysts/GlobalAnalystsReport.aspx?reportBy=1">By Location</a></li><li class="hoverTrigger"><a href="/IP/UI/Report/GlobalAnalysts/GlobalAnalystsReport.aspx?reportBy=2">By Meeting</a></li></ul></li><li><a href="/IP/UI/Report/GlobalEvent/GlobalEventReport.aspx">Global Event</a></li><li><a href="/IP/UI/Report/GlobalRoadshow/GlobalRoadshowReport.aspx">Global Roadshow</a></li><li><a href="/IP/UI/Report/GlobalSpecialist/GlobalSpecialistReport.aspx">Global Specialist</a></li><li><a href="/IP/UI/Report/CompanyDevelopment/CompanyDevelopmentReport.aspx?ReportFrom=2">Internal Attendee</a></li></ul></li><li class="hoverTrigger"><a href="javascript:void(0)">Admin<i class="fa fa-angle-down fa-indicator"></i></a><ul class="ipreo-nav-dropdown-multilevel effect-fade"><li><a href="/IP/UI/Admin/AdminGroup.aspx">Groups</a></li><li><a href="/IP/UI/Admin/AdminBrokerDealer.aspx">Brokers/Dealers</a></li><li><a href="/IP/UI/Admin/AdminIssuer.aspx">Companies</a></li><li><a href="/IP/UI/Admin/AdminCustomerPreferences.aspx?preference_id=1">Customer Preference</a></li><li><a href="/IP/UI/Conferences/Admin/AdminCommunications.aspx">Communications</a></li><li><a href="/IP/UI/Admin/AdminHoliday.aspx?type=1">Holiday</a></li><li class="hoverTrigger"><a class="has-children" href="javascript:void(0)">Budget</a><ul class="ipreo-nav-dropdown-multilevel effect-fade"><li class="hoverTrigger"><a href="/IP/UI/Admin/AdminBudgetAttendanceType.aspx">Attendance Types</a></li><li class="hoverTrigger"><a href="/IP/UI/Admin/AdminBudgetCostCenter.aspx">Cost Centers</a></li><li class="hoverTrigger"><a href="/IP/UI/Admin/AdminBudgetExchangeRate.aspx">Exchange Rates</a></li><li class="hoverTrigger"><a href="/IP/UI/Admin/AdminBudgetExpenseType.aspx">Expense Types</a></li></ul></li><li class="hoverTrigger"><a class="has-children" href="javascript:void(0)">Travel Admin</a><ul class="ipreo-nav-dropdown-multilevel effect-fade"><li class="hoverTrigger"><a href="/IP/UI/Admin/AdminAirTravel.aspx">Air Travel</a></li><li class="hoverTrigger"><a href="/IP/UI/Admin/AdminAutoTravel.aspx">Auto Travel</a></li><li class="hoverTrigger"><a href="/IP/UI/Admin/AdminBookingAgent.aspx">Booking Agent</a></li><li class="hoverTrigger"><a href="/IP/UI/Admin/AdminVenue.aspx?venue_type_cd=1">Venues</a></li></ul></li></ul></li><li class="hoverTrigger"><a href="javascript:void(0)">Applications<i class="fa fa-angle-down fa-indicator"></i></a><ul class="ipreo-nav-dropdown-multilevel effect-fade"><li><a href="/IP/UI/Service/ExternalLinks.aspx">i-Deal</a></li></ul></li><li class="hoverTrigger"><a href="/IP/UI/Conferences/Event/ConferenceCalendar.aspx?v=2">Conferences</a></li></ul>
+    </section>
+</nav>
+    <div class="target-manager panel panel-primary" ng-app="targetManager" ng-controller="targetManager as targetManager">
+        <div class="header panel-heading ">
+            <h2 class="panel-title">Targeting Manager</h2>
+            <p>Explanation text can be here, information, text, text, text etc</p>
+        </div>
+        <div class="top-panel">
+            <div class="options-btns">
+                <button class="btn btn-default"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                <button class="btn btn-default"><i class="fa fa-columns" aria-hidden="true"></i></button>
+                <button class="btn btn-default"><i class="fa fa-file-excel-o" aria-hidden="true"></i></button>
+            </div>
+            <div class="search">
+                <div>
+                    <input type="text" class="search-input" ng-click="isVisible=true" placeholder="Search Account/Contact"/>
+                    <button class="search-btn"><i class="fa fa-search" ></i></button>
+                    <ul class="dropdown-menu" ng-show="isVisible">
+                            <li ng-click="isVisible=false"><span>Account Name</span><span>Contact</span></li>
+                            <li ng-click="isVisible=false"><span>Account Name</span><span>Contact</span></li>
+                            <li ng-click="isVisible=false"><span>Account Name</span><span>Contact</span></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="grid" ui-grid="targetManager.gridOptions" ui-grid-resize-columns ui-grid-edit ui-grid-cellnav
+             ui-grid-move-columns style="height: auto"></div>
+    </div>
+</body>
+</html>
