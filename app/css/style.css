@@ -1,0 +1,496 @@
+/* All colors */
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%; }
+  body .target-manager {
+    background: #FFFFFF;
+    margin: 20px auto;
+    width: 80%;
+    padding-top: 15px; }
+    body .target-manager .header p {
+      display: block;
+      margin: 0px;
+      padding: 0px 15px 15px; }
+    body .target-manager h2 {
+      margin: 0px;
+      font-size: 28px;
+      display: block; }
+    body .target-manager .top-panel {
+      color: #414152;
+      background-color: transparent;
+      border-bottom: 1px solid #eaeaea;
+      text-align: center;
+      padding: 10px;
+      height: 30px; }
+      body .target-manager .top-panel .options-btns {
+        float: right; }
+        body .target-manager .top-panel .options-btns button i {
+          font-size: 18px;
+          color: #515151; }
+      body .target-manager .top-panel .search-input {
+        color: #414152;
+        vertical-align: baseline;
+        font-weight: 400;
+        box-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 2px 0px inset;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        border: 1px solid #d9d9d9;
+        border-radius: 2px;
+        transition: all 0.15s ease-in-out;
+        font-size: 16px;
+        width: 95%;
+        padding-right: 30px;
+        padding: 5px; }
+      body .target-manager .top-panel .search > div {
+        position: relative;
+        width: 500px;
+        margin: auto;
+        text-align: left; }
+      body .target-manager .top-panel .search-btn {
+        background: transparent;
+        border: 0px;
+        outline: none;
+        margin-left: -30px;
+        cursor: pointer; }
+      body .target-manager .top-panel .dropdown-menu {
+        width: 97%;
+        z-index: 100;
+        margin: auto;
+        position: absolute;
+        list-style: none;
+        background: #ffffff;
+        padding: 0px; }
+        body .target-manager .top-panel .dropdown-menu > li {
+          display: table;
+          width: 100%;
+          cursor: pointer; }
+          body .target-manager .top-panel .dropdown-menu > li:hover {
+            background: #f5f6f8; }
+          body .target-manager .top-panel .dropdown-menu > li > span {
+            display: table-cell;
+            text-align: left;
+            padding: 5px 10px; }
+    body .target-manager .event-name-panel {
+      background: #EEEEEE;
+      padding: 20px; }
+      body .target-manager .event-name-panel .event-name {
+        font-size: 18px;
+        color: #5f5f5f;
+        cursor: pointer; }
+        body .target-manager .event-name-panel .event-name i {
+          font-size: 10px;
+          margin-top: -4px; }
+      body .target-manager .event-name-panel .dropdown-menu {
+        min-width: 260px; }
+    body .target-manager .nav-tabs {
+      border-bottom: 2px solid #CCCCCC;
+      padding-top: 5px; }
+    body .target-manager .nav-tabs > li > a {
+      color: #515151;
+      padding: 7px 5px;
+      font-size: 16px;
+      border-bottom: 5px solid transparent; }
+      body .target-manager .nav-tabs > li > a:hover {
+        border-bottom-color: #0d76c6; }
+    body .target-manager .nav-tabs > li.active > a {
+      border-bottom: 5px solid #515151; }
+    body .target-manager .filters {
+      padding: 10px 15px 5px; }
+      body .target-manager .filters .filter {
+        display: inline-block;
+        text-align: left; }
+      body .target-manager .filters .check-all {
+        padding-top: 15px; }
+    body .target-manager .quickAdd-panel {
+      background: #f5f5f7;
+      height: 40px;
+      margin-bottom: 15px;
+      padding: 5px 35px;
+      border-bottom: 1px solid #eeeeee; }
+      body .target-manager .quickAdd-panel .filter {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: left; }
+        body .target-manager .quickAdd-panel .filter .contacts-add .select2-result-label {
+          display: table;
+          width: 100%;
+          table-layout: fixed; }
+          body .target-manager .quickAdd-panel .filter .contacts-add .select2-result-label > div {
+            display: table-cell;
+            width: 240px; }
+            body .target-manager .quickAdd-panel .filter .contacts-add .select2-result-label > div:first-child {
+              width: 150px; }
+            body .target-manager .quickAdd-panel .filter .contacts-add .select2-result-label > div:last-child {
+              width: 60px; }
+            body .target-manager .quickAdd-panel .filter .contacts-add .select2-result-label > div > div {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              width: 95%; }
+      body .target-manager .quickAdd-panel .title {
+        font-weight: 600;
+        font-size: 18px;
+        opacity: 0.5;
+        padding-right: 10px; }
+    body .target-manager .action-btns {
+      display: inline-block;
+      padding-left: 10px; }
+      body .target-manager .action-btns > div {
+        display: inline-block; }
+      body .target-manager .action-btns > a, body .target-manager .action-btns > div > a {
+        display: inline-block;
+        padding: 3px;
+        font-size: 12px;
+        margin: 0px 2px;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        height: 25px;
+        text-align: center;
+        color: #515151; }
+        body .target-manager .action-btns > a i, body .target-manager .action-btns > div > a i {
+          font-size: 18px;
+          color: #0d76c6;
+          vertical-align: middle; }
+        body .target-manager .action-btns > a:hover, body .target-manager .action-btns > div > a:hover {
+          border-color: #b8b8b8;
+          background-image: linear-gradient(to bottom, #fefefe, #f2f2f2);
+          text-decoration: none; }
+    body .target-manager .pre-grid {
+      padding: 0px 25px 5px; }
+      body .target-manager .pre-grid .filter {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: left; }
+        body .target-manager .pre-grid .filter .form-control {
+          height: 28px;
+          margin-top: -4px; }
+    body .target-manager .ui-grid {
+      border: 0px;
+      background: #f5f6f8; }
+      body .target-manager .ui-grid .ui-grid-menu-button {
+        top: 4px; }
+      body .target-manager .ui-grid .ui-grid-filter-container {
+        display: none !important; }
+      body .target-manager .ui-grid .ui-grid-header {
+        border-bottom: 1px solid #e5e6e7;
+        border-top: 1px solid #e5e6e7; }
+      body .target-manager .ui-grid .ui-grid-menu .ui-grid-menu-inner {
+        background: #ffffff; }
+      body .target-manager .ui-grid .addRequest-btn {
+        color: green;
+        font-size: 18px;
+        line-height: 14px; }
+      body .target-manager .ui-grid .editRequest-btn {
+        color: orange;
+        font-size: 16px;
+        line-height: 14px; }
+      body .target-manager .ui-grid .ui-grid-menu-item:nth-child(2) {
+        display: none; }
+      body .target-manager .ui-grid .ui-grid-top-panel {
+        background: #f5f5f7;
+        overflow: visible; }
+      body .target-manager .ui-grid .ui-grid-header-cell-wrapper .ui-grid-sort-priority-number {
+        display: none; }
+      body .target-manager .ui-grid .ui-grid-header-cell-label {
+        font-size: 13px;
+        font-weight: 600; }
+      body .target-manager .ui-grid .ui-grid-row, body .target-manager .ui-grid .ui-grid-cell, body .target-manager .ui-grid .ui-grid-cell .ui-grid-vertical-bar {
+        height: auto;
+        display: flex;
+        align-content: stretch; }
+      body .target-manager .ui-grid .ui-grid-row div[role=row] {
+        display: flex;
+        align-content: stretch; }
+        body .target-manager .ui-grid .ui-grid-row div[role=row]:hover div.ui-grid-cell .ui-grid-cell-contents, body .target-manager .ui-grid .ui-grid-row div[role=row]:hover div.ui-grid-cell-event-cancelled .ui-grid-cell-contents {
+          background: #fbf8e5; }
+          body .target-manager .ui-grid .ui-grid-row div[role=row]:hover div.ui-grid-cell .ui-grid-cell-contents button.add-event, body .target-manager .ui-grid .ui-grid-row div[role=row]:hover div.ui-grid-cell .ui-grid-cell-contents button.eventName-menu, body .target-manager .ui-grid .ui-grid-row div[role=row]:hover div.ui-grid-cell-event-cancelled .ui-grid-cell-contents button.add-event, body .target-manager .ui-grid .ui-grid-row div[role=row]:hover div.ui-grid-cell-event-cancelled .ui-grid-cell-contents button.eventName-menu {
+            display: inline-block; }
+      body .target-manager .ui-grid .ui-grid-header-cell {
+        border: 0px; }
+        body .target-manager .ui-grid .ui-grid-header-cell .header-options {
+          display: none;
+          background: transparent;
+          border: 0px;
+          color: #AAAAAA;
+          position: absolute;
+          top: 7px;
+          right: -1px;
+          font-size: 15px;
+          outline: none; }
+        body .target-manager .ui-grid .ui-grid-header-cell:hover .header-options {
+          display: inline-block; }
+        body .target-manager .ui-grid .ui-grid-header-cell > div {
+          padding: 0px;
+          border-left: 1px solid transparent; }
+          body .target-manager .ui-grid .ui-grid-header-cell > div[aria-sort="ascending"], body .target-manager .ui-grid .ui-grid-header-cell > div[aria-sort="descending"] {
+            background: #ebecf0;
+            border-right: 1px solid #e6e6e6;
+            border-left: 1px solid #e6e6e6; }
+          body .target-manager .ui-grid .ui-grid-header-cell > div.sortable[aria-sort="none"]:hover {
+            background: #f0f1f4; }
+            body .target-manager .ui-grid .ui-grid-header-cell > div.sortable[aria-sort="none"]:hover::before {
+              font: normal normal normal 14px/1 FontAwesome;
+              font-size: inherit;
+              text-rendering: auto;
+              -webkit-font-smoothing: antialiased;
+              content: "\f0dc";
+              position: absolute;
+              color: #d9d9d9;
+              margin-top: 13px;
+              margin-left: 4px; }
+        body .target-manager .ui-grid .ui-grid-header-cell.movingColumn, body .target-manager .ui-grid .ui-grid-header-cell.movingColumn:hover, body .target-manager .ui-grid .ui-grid-header-cell.movingColumn:active {
+          background: #ffffff;
+          border: 1px solid #0079bd;
+          box-shadow: 0px 0px 8px 0px rgba(0, 120, 189, 0.18); }
+        body .target-manager .ui-grid .ui-grid-header-cell .ui-grid-column-resizer.right {
+          top: 6px;
+          border-right: 1px solid #e6e6e6;
+          width: 1px;
+          right: 0px; }
+        body .target-manager .ui-grid .ui-grid-header-cell .ui-grid-cell-contents {
+          padding: 11px 6px 9px 6px;
+          line-height: 15px; }
+          body .target-manager .ui-grid .ui-grid-header-cell .ui-grid-cell-contents input {
+            width: 70%; }
+        body .target-manager .ui-grid .ui-grid-header-cell:first-child > div.sortable[aria-sort="none"]:hover::before {
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          content: "\f0dc";
+          position: absolute;
+          color: #d9d9d9;
+          margin-top: 13px;
+          margin-left: 17px; }
+        body .target-manager .ui-grid .ui-grid-header-cell:first-child > div .ui-grid-cell-contents {
+          padding-left: 30px; }
+      body .target-manager .ui-grid .ui-grid-header-cell-primary-focus {
+        outline: none; }
+      body .target-manager .ui-grid .ui-grid-header-cell-row {
+        font-size: 13px; }
+      body .target-manager .ui-grid .ui-grid-cell-contents .sort-status {
+        color: #0d76c6;
+        margin-left: -17px;
+        font-size: 12px;
+        line-height: 14px; }
+        body .target-manager .ui-grid .ui-grid-cell-contents .sort-status i:before {
+          margin-right: 0px; }
+        body .target-manager .ui-grid .ui-grid-cell-contents .sort-status .fa {
+          display: inline; }
+      body .target-manager .ui-grid .ui-grid-viewport {
+        background: #ffffff;
+        overflow: auto !important;
+        width: 100% !important;
+        outline: none; }
+      body .target-manager .ui-grid .ui-grid-header-viewport {
+        overflow: visible; }
+      body .target-manager .ui-grid .ui-grid-cell-contents {
+        font-size: 13px; }
+        body .target-manager .ui-grid .ui-grid-cell-contents > div {
+          height: 1.4em; }
+      body .target-manager .ui-grid .ui-grid-canvas {
+        padding-top: 0px;
+        height: auto !important; }
+        body .target-manager .ui-grid .ui-grid-canvas .ui-grid-cell-contents {
+          padding: 7px 5px 6px 5px;
+          border-bottom: 1px solid #e6e6e6;
+          background: #FFFFFF;
+          width: 100%; }
+          body .target-manager .ui-grid .ui-grid-canvas .ui-grid-cell-contents.ui-grid-cell-checkbox {
+            padding: 7px 10px 6px; }
+      body .target-manager .ui-grid .ui-grid-row > div .ui-grid-cell {
+        border-right: 0px;
+        padding: 0px; }
+        body .target-manager .ui-grid .ui-grid-row > div .ui-grid-cell form input {
+          margin: 3px 15px;
+          height: 20px;
+          width: 85%; }
+        body .target-manager .ui-grid .ui-grid-row > div .ui-grid-cell:first-child {
+          border-left: 15px solid #ffffff; }
+        body .target-manager .ui-grid .ui-grid-row > div .ui-grid-cell.ui-grid-cell-event-cancelled .ui-grid-cell-contents, body .target-manager .ui-grid .ui-grid-row > div .ui-grid-cell.ui-grid-cell-event-cancelled:first-child .ui-grid-cell-contents {
+          background-color: #f9f9f9;
+          color: #95959f;
+          font-style: italic; }
+          body .target-manager .ui-grid .ui-grid-row > div .ui-grid-cell.ui-grid-cell-event-cancelled .ui-grid-cell-contents a, body .target-manager .ui-grid .ui-grid-row > div .ui-grid-cell.ui-grid-cell-event-cancelled:first-child .ui-grid-cell-contents a {
+            color: #95959f; }
+          body .target-manager .ui-grid .ui-grid-row > div .ui-grid-cell.ui-grid-cell-event-cancelled .ui-grid-cell-contents i, body .target-manager .ui-grid .ui-grid-row > div .ui-grid-cell.ui-grid-cell-event-cancelled:first-child .ui-grid-cell-contents i {
+            filter: alpha(opacity=0.6);
+            -khtml-opacity: 0.6;
+            -moz-opacity: 0.6;
+            opacity: 0.6; }
+          body .target-manager .ui-grid .ui-grid-row > div .ui-grid-cell.ui-grid-cell-event-cancelled .ui-grid-cell-contents.event-type span, body .target-manager .ui-grid .ui-grid-row > div .ui-grid-cell.ui-grid-cell-event-cancelled:first-child .ui-grid-cell-contents.event-type span {
+            filter: alpha(opacity=0.6);
+            -khtml-opacity: 0.6;
+            -moz-opacity: 0.6;
+            opacity: 0.6; }
+      body .target-manager .ui-grid .ui-grid-row:nth-child(even) .ui-grid-cell, body .target-manager .ui-grid .ui-grid-row:nth-child(odd) .ui-grid-cell {
+        background: #FFFFFF; }
+      body .target-manager .ui-grid .ui-grid-row .event-name-cell {
+        overflow: visible; }
+      body .target-manager .ui-grid .ui-grid-row .event-name {
+        position: relative;
+        font-weight: 600;
+        overflow: visible;
+        padding-right: 60px; }
+        body .target-manager .ui-grid .ui-grid-row .event-name a {
+          color: #414152; }
+        body .target-manager .ui-grid .ui-grid-row .event-name .new-event {
+          color: #1184DB;
+          font-weight: bold;
+          margin-right: 3px;
+          display: inline-block; }
+        body .target-manager .ui-grid .ui-grid-row .event-name .fa-shield, body .target-manager .ui-grid .ui-grid-row .event-name .fa-hourglass-start {
+          color: #888888;
+          margin-right: 7px; }
+        body .target-manager .ui-grid .ui-grid-row .event-name button.add-event {
+          background: #FFFFFF;
+          border-radius: 50%;
+          border: 1px solid #AAAAAA;
+          color: #AAAAAA;
+          position: absolute;
+          top: 4px;
+          height: 26px;
+          padding: 1px;
+          width: 26px;
+          right: 42px;
+          font-size: 16px;
+          display: none;
+          outline: none; }
+          body .target-manager .ui-grid .ui-grid-row .event-name button.add-event:hover {
+            border: 1px solid #1184DB;
+            color: #1184DB; }
+        body .target-manager .ui-grid .ui-grid-row .event-name button.eventName-menu {
+          background: #FFFFFF;
+          border-radius: 50%;
+          border: 1px solid #AAAAAA;
+          color: #AAAAAA;
+          height: 26px;
+          width: 26px;
+          padding: 1px;
+          font-size: 16px;
+          display: none;
+          outline: none;
+          position: absolute;
+          top: 4px;
+          right: 10px; }
+          body .target-manager .ui-grid .ui-grid-row .event-name button.eventName-menu:hover {
+            border: 1px solid #1184DB;
+            color: #1184DB; }
+        body .target-manager .ui-grid .ui-grid-row .event-name .popover {
+          min-height: 66px;
+          width: 150px;
+          margin-left: 65px; }
+        body .target-manager .ui-grid .ui-grid-row .event-name:hover button {
+          display: inline-block; }
+    body .target-manager .ui-grid-column-menu-button {
+      margin: 10px 5px; }
+      body .target-manager .ui-grid-column-menu-button i {
+        font-size: 16px; }
+    body .target-manager .ui-grid-cell-contents {
+      min-height: 33px; }
+    body .target-manager .ui-grid-cell-contents.status {
+      position: relative;
+      padding-right: 20px; }
+      body .target-manager .ui-grid-cell-contents.status i {
+        position: absolute;
+        top: 7px;
+        right: 5px;
+        font-size: 18px;
+        cursor: pointer; }
+        body .target-manager .ui-grid-cell-contents.status i.fa-plus {
+          color: #01a764; }
+        body .target-manager .ui-grid-cell-contents.status i.fa-pencil {
+          color: #ee9c0e; }
+
+.ui-select-container {
+  width: 300px; }
+  .ui-select-container .selectize-input {
+    padding: 4px;
+    border-radius: 3px; }
+  .ui-select-container .selectize-dropdown {
+    margin-top: -4px;
+    width: 292px; }
+  .ui-select-container .ui-select-choices-row-inner {
+    min-height: 26px; }
+
+.cell-with-select {
+  padding: 3px 12px 2px;
+  border-bottom: 1px solid #e6e6e6; }
+  .cell-with-select .ui-select-container .selectize-input {
+    padding: 2px;
+    border-radius: 2px; }
+
+input[type=checkbox].ipreo-checkbox {
+  display: none; }
+
+.ipreo-checkbox-label {
+  margin: 0px; }
+
+input[type=checkbox].ipreo-checkbox + label.ipreo-checkbox-label:before {
+  font-family: FontAwesome;
+  display: inline-block; }
+
+input[type=checkbox].ipreo-checkbox + label.ipreo-checkbox-label:before {
+  content: "\f096";
+  color: #adadad; }
+
+input[type=checkbox].ipreo-checkbox + label.ipreo-checkbox-label:before {
+  letter-spacing: 6px; }
+
+input[type=checkbox].ipreo-checkbox:checked + label.ipreo-checkbox-label:before {
+  content: "\f14a";
+  color: #1184db; }
+
+input[type=checkbox].ipreo-checkbox:checked + label.ipreo-checkbox-label:before {
+  letter-spacing: 5px; }
+
+.popup .shadow {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background: #000000;
+  opacity: 0.5;
+  z-index: 10000; }
+
+.popup .popup-item {
+  z-index: 100000;
+  position: absolute;
+  top: 100px;
+  left: 10%;
+  width: 1130px;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem; }
+  .popup .popup-item .popup-header {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0.9375rem; }
+  .popup .popup-item .popup-footer {
+    border-top: 1px solid #e5e5e5;
+    text-align: right;
+    padding: 0.9375rem; }
+  .popup .popup-item .ipreo-modal-close {
+    float: right;
+    color: #000;
+    margin-top: -2px;
+    cursor: pointer;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 0.2;
+    transition: all 0.1s linear;
+    padding: 0;
+    border: none;
+    background: none;
+    border-radius: 0; }
+  .popup .popup-item .ipreo-modal-title {
+    margin: 0; }
+  .popup .popup-item .popup-body {
+    position: relative;
+    padding: 0.9375rem; }
+
+/*# sourceMappingURL=maps/style.css.map */
