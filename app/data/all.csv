@@ -1,22 +1,4 @@
 name|account|shares|value|sharesQtrChange|lastMeetingDate|city|targetPriority|phone|jobTitle|email
-Jason Forster|Legal & General Investment Management, LTD|551,963,966|1878.03|-2,142,341|1/6/2016|London|Gold|+44 20-3124-3000|Portfolio Manager|jason.forster@lgim.co.uk
-Philip Winston|Capital International, LTD (U.K.)|300,921,943|870.76|17,496,400||London|Silver|+44 20-7864-5963|Portfolio Manager|paw@capgroup.com
-Peter Langerman|Franklin Mutual Advisers, LLC|195,668,964|573.81|0||Short Hills||+1 973-912-2048|Portfolio Manager|peter.langerman@franklintempleton.com
-Andrew Suzman|Capital World Investors (U.S.)|185,050,000|534.68|-31,471,000|2/1/2016|New York|Gold|+1 212-649-1554|Portfolio Manager|andrew.suzman@capitalworld.com
-Phillippe Brug?re-Tr?lat|Franklin Mutual Advisers, LLC|143,276,677|417.88|0||Short Hills||+1 973-912-2027|Portfolio Manager|p.brugere.trelat@franklintempleton.com
-Richard Hannam|State Street Global Advisors, LTD|139,091,001|444.11|1,985,476||London||+44 20-7698-6174|Portfolio Manager|richard_hannam@ssga.com
-George Evans|OppenheimerFunds, Inc|121,255,090|366.39|236,093|2/1/2016|New York|Gold|+1 212-323-0536|Chief Investment Officer|gevans@ofiglobal.com
-Edmund Kirby|Vanguard Asset Management, LTD|120,535,180|348.27|4,723,781||London||+44 20-7489-5600|Portfolio Manager|david.kirby@vanguard.co.uk
-Robert Dunphy|OppenheimerFunds, Inc|113,951,908|344.29|267,973|2/1/2016|New York|Gold|+1 212-323-0213|Portfolio Manager|rdunphy@ofiglobal.com
-Timothy Rankin|Franklin Mutual Advisers, LLC|101,353,434|294.11|0||Short Hills||+1 973-912-2098|Portfolio Manager|timothy.rankin@franklintempleton.com
-Matthew Smith|Majedie Asset Management, LTD|101,285,778|304.79|-5,645,248||London|Gold|+44 20-7618-3900|Portfolio Manager|matthew.smith@majedie.com
-Adrian Frost|Artemis Fund Managers, LTD|97,910,330|297.31|743,207||London|Gold|+44 20-7399-6005|Portfolio Manager|adrian.frost@artemisfunds.com
-Deborah Turner|Franklin Mutual Advisers, LLC|94,315,530|279.7|0||Short Hills||+1 973-912-2046|Portfolio Manager|debbie.turner@franklintempleton.com
-F. David Segal|Franklin Mutual Advisers, LLC|94,315,530|279.7|0||Short Hills||+1 973-912-2069|Portfolio Manager|david.segal@franklintempleton.com
-David Daigle|Capital Research & Management Company (U.S.)|94,230,000|272.27|-41,470,000||New York||+1 212-641-1748 ext. 71748|Portfolio Manager|dad@capgroup.com
-Christopher Field|Majedie Asset Management, LTD|88,097,748|264.75|-5,505,029||London|Gold|+44 20-7618-3900|Portfolio Manager|chris.field@majedie.com
-William Priest|Epoch Investment Partners, Inc.|84,204,494|252.99|14,433,004|2/1/2016|New York|Gold|+1 212-303-7200|Chief Investment Officer|bpriest@eipny.com
-Richard Clattenburg|T. Rowe Price International, LTD|81,816,713|236.79|9,306,003|1/4/2016|London|Gold|+44 20-7651-8200|Portfolio Manager|richard_clattenburg@troweprice.com
 Michael Welhoelter|Epoch Investment Partners, Inc.|76,854,104|230.63|14,433,004||New York|Gold|+1 212-400-4711|Portfolio Manager|mwelhoelter@eipny.com
 Nigel Bolton|BlackRock International, LTD|76,176,040|231.35|-4,702,724|1/4/2016|Edinburgh|Gold|+44 131-472-7367|Portfolio Manager|nigel.bolton@blackrock.com
 Iain Stewart|Newton Investment Management, LTD|72,449,765|220.15|4,965,307|1/28/2016|London|Gold|+44 20-7163-2220|Portfolio Manager|iain_stewart@newton.co.uk
@@ -398,3 +380,21 @@ Bertrand Paquot|Pioneer Investment Management, LTD (Ireland)||||11/20/2015|Dubli
 Fabio Di Giansante|Pioneer Investment Management, LTD (Ireland)||||11/18/2015|Dublin|Gold|+353 1-480-2627|Portfolio Manager|fabio.digiansante@pioneerinvestments.com
 Paul Gorman|Pioneer Investment Management, LTD (Ireland)||||11/12/2015|Dublin|Gold|+353 1-480-2768|Portfolio Manager|paul.gorman@pioneerinvestments.com
 Brendan Moran|Irish Life Investment Managers, LTD||||11/20/2015|Dublin|Silver|+353 1-704-2028|Portfolio Manager|brendan.moran@ilim.com
+Jason Forster|Legal & General Investment Management, LTD|551,963,966|1878.03|-2,142,341|1/6/2016|London|Gold|+44 20-3124-3000|Portfolio Manager|jason.forster@lgim.co.uk
+Philip Winston|Capital International, LTD (U.K.)|300,921,943|870.76|17,496,400||London|Silver|+44 20-7864-5963|Portfolio Manager|paw@capgroup.com
+Peter Langerman|Franklin Mutual Advisers, LLC|195,668,964|573.81|0||Short Hills||+1 973-912-2048|Portfolio Manager|peter.langerman@franklintempleton.com
+Andrew Suzman|Capital World Investors (U.S.)|185,050,000|534.68|-31,471,000|2/1/2016|New York|Gold|+1 212-649-1554|Portfolio Manager|andrew.suzman@capitalworld.com
+Phillippe Brug?re-Tr?lat|Franklin Mutual Advisers, LLC|143,276,677|417.88|0||Short Hills||+1 973-912-2027|Portfolio Manager|p.brugere.trelat@franklintempleton.com
+Richard Hannam|State Street Global Advisors, LTD|139,091,001|444.11|1,985,476||London||+44 20-7698-6174|Portfolio Manager|richard_hannam@ssga.com
+George Evans|OppenheimerFunds, Inc|121,255,090|366.39|236,093|2/1/2016|New York|Gold|+1 212-323-0536|Chief Investment Officer|gevans@ofiglobal.com
+Edmund Kirby|Vanguard Asset Management, LTD|120,535,180|348.27|4,723,781||London||+44 20-7489-5600|Portfolio Manager|david.kirby@vanguard.co.uk
+Robert Dunphy|OppenheimerFunds, Inc|113,951,908|344.29|267,973|2/1/2016|New York|Gold|+1 212-323-0213|Portfolio Manager|rdunphy@ofiglobal.com
+Timothy Rankin|Franklin Mutual Advisers, LLC|101,353,434|294.11|0||Short Hills||+1 973-912-2098|Portfolio Manager|timothy.rankin@franklintempleton.com
+Matthew Smith|Majedie Asset Management, LTD|101,285,778|304.79|-5,645,248||London|Gold|+44 20-7618-3900|Portfolio Manager|matthew.smith@majedie.com
+Adrian Frost|Artemis Fund Managers, LTD|97,910,330|297.31|743,207||London|Gold|+44 20-7399-6005|Portfolio Manager|adrian.frost@artemisfunds.com
+Deborah Turner|Franklin Mutual Advisers, LLC|94,315,530|279.7|0||Short Hills||+1 973-912-2046|Portfolio Manager|debbie.turner@franklintempleton.com
+F. David Segal|Franklin Mutual Advisers, LLC|94,315,530|279.7|0||Short Hills||+1 973-912-2069|Portfolio Manager|david.segal@franklintempleton.com
+David Daigle|Capital Research & Management Company (U.S.)|94,230,000|272.27|-41,470,000||New York||+1 212-641-1748 ext. 71748|Portfolio Manager|dad@capgroup.com
+Christopher Field|Majedie Asset Management, LTD|88,097,748|264.75|-5,505,029||London|Gold|+44 20-7618-3900|Portfolio Manager|chris.field@majedie.com
+William Priest|Epoch Investment Partners, Inc.|84,204,494|252.99|14,433,004|2/1/2016|New York|Gold|+1 212-303-7200|Chief Investment Officer|bpriest@eipny.com
+Richard Clattenburg|T. Rowe Price International, LTD|81,816,713|236.79|9,306,003|1/4/2016|London|Gold|+44 20-7651-8200|Portfolio Manager|richard_clattenburg@troweprice.com
