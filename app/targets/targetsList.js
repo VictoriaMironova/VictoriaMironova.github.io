@@ -168,7 +168,11 @@
         };
         tl.onSelectContactCallback=function(item, model){
                 item.status="";
+                if ( $scope.locations.indexOf(item.city) === -1) {
+                    $scope.locations.push(item.city);
+                }
                 $scope.targets.unshift(item);
+
                 tl.gridOptions.data=$scope.targets;
                 tl.gridApi.grid.refresh();
                 $scope.contactList.selected="";
