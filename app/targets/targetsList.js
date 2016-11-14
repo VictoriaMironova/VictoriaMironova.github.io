@@ -167,6 +167,7 @@
             }
         };
         tl.onSelectContactCallback=function(item, model){
+                item.status="";
                 $scope.targets.unshift(item);
                 tl.gridOptions.data=$scope.targets;
                 tl.gridApi.grid.refresh();
