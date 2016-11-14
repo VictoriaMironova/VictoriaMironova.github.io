@@ -16,7 +16,7 @@
 		$scope.targets.amount=0;
 		init();
 		function init() {
-			contactsSrv.getData("./data/all.csv").then(function(data) {
+			contactsSrv.getData("./data/empty.csv").then(function(data) {
 				$scope.contactList = data;
 			});
 		};
