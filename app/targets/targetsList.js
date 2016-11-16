@@ -23,7 +23,6 @@
             enableCellEditOnFocus:true,
             enableHorizontalScrollbar: uiGridConstants.scrollbars.NEVER,
             enableVerticalScrollbar: uiGridConstants.scrollbars.AUTO,
-            excessRows:50,
             columnDefs: [{
                 name: 'selected',
                 displayName: '',
@@ -97,8 +96,8 @@
                 displayName:'',
                 enableCellEdit: false,
                 cellTemplate:'<div class="ui-grid-cell-contents ui-grid-cell-checkbox addRequet" >'
-                +'<a ng-click="grid.appScope.vm.openPopup(row.entity);" class="addRequest-btn" ng-class="{\'ng-hide\':row.entity.status!=\'\'}"><i class="fa fa-plus"></i></a>'
-                +'<a ng-click="grid.appScope.vm.openPopup(row.entity);" class="editRequest-btn" ng-class="{\'ng-hide\':row.entity.status==\'\'}"><i class="fa fa-pencil"></i></a></div>',
+                +'<a ng-click="grid.appScope.vm.openPopup(row.entity);" class="addRequest-btn" ng-class="{\'ng-hide\':row.entity.status==\'Pending\'}"><i class="fa fa-plus"></i></a>'
+                +'<a ng-click="grid.appScope.vm.openPopup(row.entity);" class="editRequest-btn" ng-class="{\'ng-hide\':row.entity.status!=\'Pending\'}"><i class="fa fa-pencil"></i></a></div>',
                 width:40
             }
             ]
@@ -168,10 +167,20 @@
         };
         tl.onSelectContactCallback=function(item, model){
                 item.status="";
+                item.targetPriority="";
+
                 if ( $scope.locations.indexOf(item.city) === -1) {
                     $scope.locations.push(item.city);
                 }
-                $scope.targets.unshift(item);
+                var toAdd=true;
+                for(var j=0;j<$scope.targets.length;j++){
+                    if($scope.targets[j].name==item.name || $scope.targets[j].account==item.account){
+                        toAdd=false;
+                    }
+                }
+                if(toAdd){
+                    $scope.targets.unshift(item);
+                }
 
                 tl.gridOptions.data=$scope.targets;
                 tl.gridApi.grid.refresh();
@@ -210,9 +219,24 @@
                 }
             }
         }
+        tl.addList=function(){
+            var itemsToList=[];
+            for(var i=0;i<tl.gridOptions.data.length;i++){
+                if(tl.gridOptions.data[i].selected){
+                    itemsToList.push(tl.gridOptions.data[i]);
+                }
+            }
+            var ListObject={};
+            ListObject.name=$scope.listName;
+            ListObject.type="A";
+            ListObject.source=itemsToList;
+            $scope.list.push(ListObject);
+            $scope.listName="";
+        }
         $scope.$watch('vm.filterValue', function(newVal, oldVal) {
             tl.filter();
         });
+
         init();
         function init() {
             if($scope.targets.length>0){

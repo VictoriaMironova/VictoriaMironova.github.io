@@ -57,9 +57,11 @@
         </div>
         <div class="event-name-panel" >
             <div  uib-dropdown>
-                <span class="event-name" uib-dropdown-toggle id="event-name">Google Results Roadshow <i class="fa fa-chevron-down"></i></span>
+                <span class="event-name" uib-dropdown-toggle id="event-name">{{event}}<i class="fa fa-chevron-down"></i></span>
                 <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="event-name">
-                    <li role="menuitem"><a href="#">Vodafone Interims Marketing</a></li>
+                    <li class="search" ng-click="$event.stopPropagation()"><input type="text" class="form-control"></li>
+                    <li role="menuitem"><a href="#" ng-click="OpenClearEvent()">Google Results Roadshow</a></li>
+                    <li role="menuitem"><a href="#" ng-click="OpenFullEvent()">Vodafone Interims Marketing</a></li>
                 </ul>
             </div>
         </div>

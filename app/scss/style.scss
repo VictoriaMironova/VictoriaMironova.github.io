@@ -116,8 +116,8 @@ body{
   height: 100%;
 .target-manager {
   background: #FFFFFF;
-  margin:20px auto;
-  width:80%;
+  margin:5px auto;
+  width:95%;
   padding-top:15px;
   .header p{
     display: block;
@@ -211,6 +211,22 @@ body{
     }
     .dropdown-menu{
       min-width: 260px;
+    }
+    .search{
+      padding:5px 15px;
+      position: relative;
+      &:after{
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        content: "\f002";
+        position: absolute;
+        right:22px;
+        top:15px;
+        color:$color-grey;
+      }
+      input{
+
+      }
     }
   }
   .nav-tabs{
@@ -314,6 +330,16 @@ body{
       .form-control{
         height: 28px;
         margin-top: -4px;
+      }
+    }
+    .add-form{
+      width:210px;
+      padding:0px 5px;
+      >*{
+        display: inline-block;
+      }
+      .form-control{
+        width:145px;
       }
     }
   }

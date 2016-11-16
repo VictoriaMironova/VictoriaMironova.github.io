@@ -1,14 +1,14 @@
 name|account|shares|value|sharesQtrChange|lastMeetingDate|city|targetPriority|phone|jobTitle|email
 Michael Welhoelter|Epoch Investment Partners, Inc.|76,854,104|230.63|14,433,004||New York|Gold|+1 212-400-4711|Portfolio Manager|mwelhoelter@eipny.com
 Nigel Bolton|BlackRock International, LTD|76,176,040|231.35|-4,702,724|1/4/2016|Edinburgh|Gold|+44 131-472-7367|Portfolio Manager|nigel.bolton@blackrock.com
-Iain Stewart|Newton Investment Management, LTD|72,449,765|220.15|4,965,307|1/28/2016|London|Gold|+44 20-7163-2220|Portfolio Manager|iain_stewart@newton.co.uk
+|Newton Investment Management, LTD|72,449,765|220.15|4,965,307|1/28/2016|London|Gold|||
 Thomas Franks|TIAA-CREF Investment Management|72,301,586|217.05|5,841,597|2/3/2016|New York|Gold|+1 212-916-4336|Chief Investment Officer|tfranks@tiaa.org
 Isabelle de Wismes|Capital World Investors (U.K.)|70,779,417|204.56|14,358,300|1/4/2016|London|Bronze|+44 20-7864-5132|Portfolio Manager|id@capgroup.com
 Richard Staveley|Majedie Asset Management, LTD|67,014,971|201.18|-4,059,315|1/5/2016|London|Gold|+44 20-7618-3907|Portfolio Manager|richard.staveley@majedie.com
 Victoria Harriss|Royal London Asset Management, LTD|63,455,015|191.97|-3,937,932||London|Gold|+44 20-7506-6500|Portfolio Manager|
-James Lowen|J O Hambro Capital Management, LTD|62,420,685|188.84|1,435,000||London|Gold|+44 20-7747-5606|Portfolio Manager|jlowen@johcm.co.uk
+|J O Hambro Capital Management, LTD|62,420,685|188.84|1,435,000||London|Gold|||
 Nicholas Clay|Newton Investment Management, LTD|58,683,326|178.97|397,136||London|Gold|+44 20-7163-2130|Portfolio Manager|nick_clay@newton.co.uk
-Nigel Thomas|AXA Investment Managers (U.K.), LTD|58,176,783|176.78|-1,294,043||London||+44 20-7003-1000|Portfolio Manager|nigel.thomas@axa-im.com
+|AXA Investment Managers (U.K.), LTD|58,176,783|176.78|-1,294,043||London||||
 Benjamin Stone|MFS International (U.K.), LTD|58,033,798|174.23|-27,756,823|3/30/2016|London|Gold|+44 20-7429-7212|Portfolio Manager|bstone@mfs.com
 Pablo de la Mata|MFS International (U.K.), LTD|58,033,798|174.23|-27,756,823||London|Gold|+44 20-7429-7200|Portfolio Manager|pdelamata@mfs.com
 Alice Gaskell|BlackRock Investment Management (U.K.), LTD|54,354,222|165.16|0|1/4/2016|London|Gold|+44 20-7743-2431|Portfolio Manager|alice.gaskell@blackrock.com
@@ -24,7 +24,7 @@ Kera Van Valen|Epoch Investment Partners, Inc.|48,917,543|145.84|15,386,392||New
 John Tobin|Epoch Investment Partners, Inc.|48,917,543|145.84|15,386,392||New York|Gold|+1 212-400-4703|Portfolio Manager|jtobin@eipny.com
 Kevin Murphy|Schroder Investment Management, LTD|48,290,117|148.83|-853,121||London|Gold|+44 20-7658-6655|Portfolio Manager|kevin.murphy@schroders.com
 Ben Lofthouse|Henderson Global Investors, LTD (U.K.)|46,412,790|136.28|859,833|1/4/2016|London||+44 20-7818-5187|Portfolio Manager|ben.lofthouse@henderson.com
-Ben Whitmore|Jupiter Asset Management, LTD (U.K.)|45,049,122|136.23|-3,290,484||London|Gold|+44 20-3817-1000|Portfolio Manager|ben.whitmore@jupiteram.com
+|Jupiter Asset Management, LTD (U.K.)|45,049,122|136.23|-3,290,484||London|Gold|||
 Gerd Woort-Menker|J.P. Morgan Investment Management, Inc.|44,237,302|131.84|-6,245,701|2/1/2016|New York|Gold|+1 212-648-0729|Portfolio Manager|gerd.woort-menker@jpmorgan.com
 Hugo Ure|Troy Asset Management, LTD|43,165,000|129.39|2,900,000|3/30/2016|London|Silver|+44 20-7290-7845|Portfolio Manager|hu@taml.co.uk
 Christopher Thomsen|Capital Research Global Investors (U.K.)|43,000,000|124.24|0|1/4/2016|London|Silver|+44 20-7864-5461|Portfolio Manager|cmt@capgroup.com

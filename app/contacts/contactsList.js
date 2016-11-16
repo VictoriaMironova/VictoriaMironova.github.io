@@ -11,13 +11,18 @@
 
     function contactsList(uiGridConstants, contactsSrv, $scope){
         var cl = this;
-        cl.list=[{name:"All Contacts", source:"./data/all.csv"},{name: "East Coast", source: "./data/east.csv"},{name:"United Kingdom",source:"./data/united.csv"}];
+        cl.list=$scope.list;
         cl.filterValue="";
         cl.onSelectCallback = function (item, model){
+            if(item.type=="L"){
             contactsSrv.getData(item.source).then(function(data) {
                 cl.gridOptions.data = data;
 
             });
+            }
+            else{
+                cl.gridOptions.data = item.source;
+            }
             cl.list.selected=item;
         };
         init();
@@ -110,6 +115,7 @@
                 }
                 return renderableRows;
             }, 200);
+
         };
         cl.toggleAll=function(){
 
@@ -125,8 +131,17 @@
                 if(cl.gridOptions.data[i].selected){
                     cl.gridOptions.data[i].status="";
                     cl.gridOptions.data[i].notes="";
+                    cl.gridOptions.data[i].targetPriority="";
                     cl.gridOptions.data[i].selected=false;
-                    $scope.targets.push(cl.gridOptions.data[i]);
+                    var toAdd=true;
+                    for(var j=0;j<$scope.targets.length;j++){
+                        if($scope.targets[j].name==cl.gridOptions.data[i].name || $scope.targets[j].account==cl.gridOptions.data[i].account){
+                            toAdd=false;
+                        }
+                    }
+                    if(toAdd){
+                        $scope.targets.push(cl.gridOptions.data[i]);
+                    }
                     if ( $scope.locations.indexOf(cl.gridOptions.data[i].city) === -1) {
                         $scope.locations.push(cl.gridOptions.data[i].city);
                     }
