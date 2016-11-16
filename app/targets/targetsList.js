@@ -27,8 +27,8 @@
                 name: 'selected',
                 displayName: '',
                 cellTemplate:'<div class="ui-grid-cell-contents ui-grid-cell-checkbox">'
-                +'<input type="checkbox" class="ipreo-checkbox" ng-model="row.entity.selected" id="selected-row{{row.entity.name}}"/>'
-                +'<label class="ipreo-checkbox-label" for="selected-row{{row.entity.name}}"></label></div>',
+                +'<input type="checkbox" class="ipreo-checkbox" ng-model="row.entity.selected" id="selected-row{{row.entity.name}}{{row.entity.account}}"/>'
+                +'<label class="ipreo-checkbox-label" for="selected-row{{row.entity.name}}{{row.entity.account}}"></label></div>',
                 width:40,
                 type: 'boolean',
                 enableCellEdit: false
@@ -174,7 +174,7 @@
                 }
                 var toAdd=true;
                 for(var j=0;j<$scope.targets.length;j++){
-                    if($scope.targets[j].name==item.name || $scope.targets[j].account==item.account){
+                    if($scope.targets[j].name==item.name && $scope.targets[j].account==item.account){
                         toAdd=false;
                     }
                 }
